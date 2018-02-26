@@ -1,0 +1,664 @@
+<!--header-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>GRAPE Online</title>
+
+  <!-- Bootstrap -->
+  <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- NProgress -->
+  <link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
+  <!-- iCheck -->
+  <link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+  <!-- Custom Theme Style -->
+  <link href="/build/css/custom.css" rel="stylesheet">
+</head>
+
+<body class="nav-md">
+  <div class="container body">
+    <div class="main_container">
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="index.html" class="site_title"><span>GRAPE</span></a>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+              <ul class="nav side-menu">
+                <li><a href="grape-running?if_waiting=0"><i class="fa fa-home"></i> Processing</span></a></li>
+                <li><a href="grape-plug"><i class="fa fa-plug"></i> Plug</span></a></li>
+                <!-- <li><a href="grape-running-communication"><i class="fa fa-home"></i>Running-communication</a></li> -->
+                <li><a href="grape-cluster"><i class="fa fa-server"></i>Clusters</a></li>
+                <li><a href="grape-queries"><i class="fa fa-home"></i>Queries</a></li>
+                <li><a href="grape-instances"><i class="fa fa-home"></i>Jobs</a></li>
+                <!-- <li><a href="grape-single-query"><i class="fa fa-line-chart"></i>Performance</a></li> -->
+              </ul>
+            </div>
+
+
+          </div>
+          <!-- /sidebar menu -->
+
+        </div>
+      </div>
+      <!--headerend-->
+
+      <!-- page content -->
+      <div class="right_col" role="main">
+        <div class="">
+          <div class="page-title">
+            <div class="title_left">
+              <h3>Job <small>a detail page for single job</small></h3>
+            </div>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>Basic Info <small>basic info</small></h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>Key</th>
+                        <th>Value</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">JobID</th>
+                        <td>ID</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Codebase</th>
+                        <td>9a181b3</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">StartTime</th>
+                        <td>2017.12.21 20:11:12</td>
+                      </tr>
+
+                      <tr>
+                        <th scope="row">Mode</th>
+                        <td>Interactive</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Access Address</th>
+                        <td>128.12.31.12:8080</td>
+                      </tr>
+
+                      <tr>
+                        <th scope="row">Application</th>
+                        <td>SSSP</td>
+                      </tr>
+
+                      <tr>
+                        <th scope="row">numWorker</th>
+                        <td>4</td>
+                      </tr>
+
+
+                    </tbody>
+                  </table>
+
+                  <button type="submit" class="btn btn-success pull-right">Stop</button>
+                  <button type="submit" class="btn btn-primary pull-right">Restart</button>
+
+
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>Dataset<small>Loaded dataset</small></h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Settings 1</a>
+                        </li>
+                        <li><a href="#">Settings 2</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>Key</th>
+                        <th>Value</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Vertices</th>
+                        <td>file://crdataset/twitter.v</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Edges</th>
+                        <td>file://crdataset/twitter.e</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Partionner</th>
+                        <td>Prepartitoned: file://crdataset/twitter.r4</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Partition-Mode</th>
+                        <td>Edge-cut</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Graph-Load-Strategy</th>
+                        <td>OnlyOutgoingEdge</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">numFragment</th>
+                        <td>8</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>Recent Queries</h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+
+                  <p>A grape-job means a start of grape-server.</p>
+
+                  <!-- start project list -->
+                  <table class="table table-striped projects">
+                    <thead>
+                      <tr>
+                        <th style="width: 1%">#</th>
+                        <th style="width: 15%">QueryID</th>
+                        <th style="width: 15%">GrapeJob</th>
+                        <th style="width: 5%">TotalTime</th>
+                        <th style="width: 5%">EvaluationTime</th>
+                        <th style="width: 5%">CommicationTime</th>
+                        <th style="width: 5%">AssembleTime</th>
+                        <th style="width: 5%">Round</th>
+                        <th style="width: 5%">Communication</th>
+                        <th>Status</th>
+                        <th style="width: 20%">Details</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>
+                          <a>Query-3215431</a>
+                          <br />
+                          <small>begin@2017/04/06 23:00:12</small>
+                        </td>
+                        <td>
+                          JOB-2017-04-06
+                        </td>
+                        <td>
+                          2314.4s
+                        </td>
+                        <td>
+                          2000.3s
+                        </td>
+                        <td>
+                          100s
+                        </td>
+                        <td>
+                          100s
+                        </td>
+                        <td>
+                          18
+                        </td>
+                        <td>
+                          1372198372
+                        </td>
+                        <td>
+                          <button type="button" class="btn btn-success btn-xs">Running</button>
+                        </td>
+                        <td>
+                          <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View Results </a>
+                          <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> Details </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>1</td>
+                        <td>
+                          <a>Query-3215431</a>
+                          <br />
+                          <small>begin@2017/04/06 23:00:12</small>
+                        </td>
+                        <td>
+                          JOB-2017-04-06
+                        </td>
+                        <td>
+                          2314.4s
+                        </td>
+                        <td>
+                          2000.3s
+                        </td>
+                        <td>
+                          100s
+                        </td>
+                        <td>
+                          100s
+                        </td>
+                        <td>
+                          18
+                        </td>
+                        <td>
+                          1372198372
+                        </td>
+                        <td>
+                          <button type="button" class="btn btn-success btn-xs">Running</button>
+                        </td>
+                        <td>
+                          <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View Results </a>
+                          <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> Details </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>1</td>
+                        <td>
+                          <a>Query-3215431</a>
+                          <br />
+                          <small>begin@2017/04/06 23:00:12</small>
+                        </td>
+                        <td>
+                          JOB-2017-04-06
+                        </td>
+                        <td>
+                          2314.4s
+                        </td>
+                        <td>
+                          2000.3s
+                        </td>
+                        <td>
+                          100s
+                        </td>
+                        <td>
+                          100s
+                        </td>
+                        <td>
+                          18
+                        </td>
+                        <td>
+                          1372198372
+                        </td>
+                        <td>
+                          <button type="button" class="btn btn-xs">Finished</button>
+                        </td>
+                        <td>
+                          <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View Results </a>
+                          <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> Details </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>1</td>
+                        <td>
+                          <a>Query-3215431</a>
+                          <br />
+                          <small>begin@2017/04/06 23:00:12</small>
+                        </td>
+                        <td>
+                          JOB-2017-04-06
+                        </td>
+                        <td>
+                          2314.4s
+                        </td>
+                        <td>
+                          2000.3s
+                        </td>
+                        <td>
+                          100s
+                        </td>
+                        <td>
+                          100s
+                        </td>
+                        <td>
+                          18
+                        </td>
+                        <td>
+                          1372198372
+                        </td>
+                        <td>
+                          <button type="button" class="btn btn-xs">Finished</button>
+                        </td>
+                        <td>
+                          <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View Results </a>
+                          <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> Details </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>1</td>
+                        <td>
+                          <a>Query-3215431</a>
+                          <br />
+                          <small>begin@2017/04/06 23:00:12</small>
+                        </td>
+                        <td>
+                          JOB-2017-04-06
+                        </td>
+                        <td>
+                          2314.4s
+                        </td>
+                        <td>
+                          2000.3s
+                        </td>
+                        <td>
+                          100s
+                        </td>
+                        <td>
+                          100s
+                        </td>
+                        <td>
+                          18
+                        </td>
+                        <td>
+                          1372198372
+                        </td>
+                        <td>
+                          <button type="button" class="btn btn-xs">Finished</button>
+                        </td>
+                        <td>
+                          <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View Results </a>
+                          <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> Details </a>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                  <!-- end project list -->
+
+                </div>
+              </div>
+            </div>
+            <!-- <div class="clearfix"></div> -->
+
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>Workers <small>Custom design</small></h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Settings 1</a>
+                        </li>
+                        <li><a href="#">Settings 2</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+
+                <div class="x_content">
+
+                  <p>Add class <code>bulk_action</code> to table for bulk actions options on row select</p>
+
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr class="headings">
+                          <th class="column-title">WorkerID </th>
+                          <th class="column-title">MachineID </th>
+                          <th class="column-title" style="width: 15%">CPU </th>
+                          <th class="column-title" style="width: 15%">Memory </th>
+                          <th class="column-title" style="width: 15%">NetworkIO </th>
+                          <th class="column-title" style="width: 15%">Disk Usage </th>
+                          <th class="column-title no-link last"><span class="nobr">Action</span>
+                          </th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr class="even pointer">
+                          <td class=" ">1</td>
+                          <td class=" ">rsv02</td>
+                          <td class=" ">
+                            <div class="progress progress_sm">
+                              <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="77"></div>
+                            </div>
+                            <small>77%</small>
+                          </td>
+                          <td class=" ">
+                            <div class="progress progress_sm">
+                              <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="52"></div>
+                            </div>
+                            <small>42G/64G</small>
+                          </td>
+                          <td class=" ">
+                            <div class="progress progress_sm">
+                              <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="24"></div>
+                            </div>
+                            <small>3532bps</small>
+                          </td>
+                          <td class=" ">
+                            <div class="progress progress_sm">
+                              <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="72"></div>
+                            </div>
+                            <small>3/5 Queries Completed</small>
+                          </td>
+                          <td class=" last"><a href="#">View</a>
+                          </td>
+                        </tr>
+
+                        <tr class="even pointer">
+                          <td class=" ">2</td>
+                          <td class=" ">rsv02</td>
+                          <td class=" ">
+                            <div class="progress progress_sm">
+                              <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="57"></div>
+                            </div>
+                            <small>77%</small>
+                          </td>
+                          <td class=" ">
+                            <div class="progress progress_sm">
+                              <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="22"></div>
+                            </div>
+                            <small>42G/64G</small>
+                          </td>
+                          <td class=" ">
+                            <div class="progress progress_sm">
+                              <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="54"></div>
+                            </div>
+                            <small>3532bps</small>
+                          </td>
+                          <td class=" ">
+                            <div class="progress progress_sm">
+                              <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="62"></div>
+                            </div>
+                            <small>3/5 Queries Completed</small>
+                          </td>
+                          <td class=" last"><a href="#">View</a>
+                          </td>
+                        </tr>
+
+                        <tr class="even pointer">
+                          <td class=" ">3</td>
+                          <td class=" ">rsv02</td>
+                          <td class=" ">
+                            <div class="progress progress_sm">
+                              <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="17"></div>
+                            </div>
+                            <small>77%</small>
+                          </td>
+                          <td class=" ">
+                            <div class="progress progress_sm">
+                              <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="22"></div>
+                            </div>
+                            <small>42G/64G</small>
+                          </td>
+                          <td class=" ">
+                            <div class="progress progress_sm">
+                              <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="34"></div>
+                            </div>
+                            <small>3532bps</small>
+                          </td>
+                          <td class=" ">
+                            <div class="progress progress_sm">
+                              <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="42"></div>
+                            </div>
+                            <small>3/5 Queries Completed</small>
+                          </td>
+                          <td class=" last"><a href="#">View</a>
+                          </td>
+                        </tr>
+
+                        <tr class="even pointer">
+                          <td class=" ">4</td>
+                          <td class=" ">rsv02</td>
+                          <td class=" ">
+                            <div class="progress progress_sm">
+                              <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="34"></div>
+                            </div>
+                            <small>77%</small>
+                          </td>
+                          <td class=" ">
+                            <div class="progress progress_sm">
+                              <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="92"></div>
+                            </div>
+                            <small>42G/64G</small>
+                          </td>
+                          <td class=" ">
+                            <div class="progress progress_sm">
+                              <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="54"></div>
+                            </div>
+                            <small>3532bps</small>
+                          </td>
+                          <td class=" ">
+                            <div class="progress progress_sm">
+                              <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="42"></div>
+                            </div>
+                            <small>3/5 Queries Completed</small>
+                          </td>
+                          <td class=" last"><a href="#">View</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /page content -->
+
+      <!--footer-->
+      <!-- footer content -->
+      <footer>
+        <div class="pull-right">
+          Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+        </div>
+        <div class="clearfix"></div>
+      </footer>
+      <!-- /footer content -->
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="/vendors/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- FastClick -->
+  <script src="/vendors/fastclick/lib/fastclick.js"></script>
+  <!-- NProgress -->
+  <script src="/vendors/nprogress/nprogress.js"></script>
+  <!-- Chart.js -->
+  <script src="/vendors/Chart.js/dist/Chart.min.js"></script>
+  <!-- gauge.js -->
+  <script src="/vendors/gauge.js/dist/gauge.min.js"></script>
+  <!-- bootstrap-progressbar -->
+  <script src="/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+  <!-- iCheck -->
+  <script src="/vendors/iCheck/icheck.min.js"></script>
+  <!-- Skycons -->
+  <script src="/vendors/skycons/skycons.js"></script>
+  <!-- Flot -->
+  <script src="/vendors/Flot/jquery.flot.js"></script>
+  <script src="/vendors/Flot/jquery.flot.pie.js"></script>
+  <script src="/vendors/Flot/jquery.flot.time.js"></script>
+  <script src="/vendors/Flot/jquery.flot.stack.js"></script>
+  <script src="/vendors/Flot/jquery.flot.resize.js"></script>
+  <!-- Flot plugins -->
+  <script src="/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+  <script src="/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+  <script src="/vendors/flot.curvedlines/curvedLines.js"></script>
+  <!-- DateJS -->
+  <script src="/vendors/DateJS/build/date.js"></script>
+  <!-- JQVMap -->
+  <script src="/vendors/jqvmap/dist/jquery.vmap.js"></script>
+  <script src="/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+  <script src="/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+  <!-- bootstrap-daterangepicker -->
+  <script src="/vendors/moment/min/moment.min.js"></script>
+  <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+  <!-- Custom Theme Scripts -->
+  <script src="/build/js/custom.min.js"></script>
+
+</body>
+
+</html>
+<!--footerend

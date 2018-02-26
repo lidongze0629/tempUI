@@ -1,0 +1,24 @@
+Log file created at: 2018/02/09 21:33:29
+Running on machine: ldz
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0209 21:33:29.326295 19709 grape.cc:17] Welcome to GRAPE!
+I0209 21:33:29.333662 19709 io_factory.h:38] Use default file location(local) to open: ./grape-test/twitter.r
+I0209 21:33:29.365067 19709 io_factory.h:38] Use default file location(local) to open: ./grape-test/twitter.e
+I0209 21:33:30.242162 19709 io_factory.h:38] Use default file location(local) to open: ./grape-test/twitter.v
+I0209 21:33:30.328832 19709 sync_worker.cc:437] [worker1] finished loading graphs...
+I0209 21:33:30.644832 19709 sssp.h:38] Create a instance of SSSP.
+I0209 21:33:30.645172 19709 bfs.h:38] Create a instance of BFS.
+I0209 21:33:30.645661 19709 pagerank.h:38] Create a instace of Pagerank.
+I0209 21:33:30.648185 19709 sync_worker.cc:44] 2 - > 1
+I0209 21:33:30.739506 19762 sssp.cc:205] [frag1] partial result output: ./sssp_4_frag_1_20180209_093330
+I0209 21:33:30.749516 19709 sync_worker.cc:44] 2 - > 1
+I0209 21:33:30.805693 19783 bfs.cc:169] [frag1] partial result output: ./bfs_1-3_frag_1_20180209_093330
+I0209 21:33:30.815783 19709 sync_worker.cc:44] 2 - > 1
+I0209 21:33:30.985574 19828 pagerank.cc:182] [frag1] partial result output: ./pagerank_frag_1_20180209_093330
+I0209 21:33:30.991633 19709 io_factory.h:38] Use default file location(local) to open: ./grape-test/p2p-31.r4
+I0209 21:33:31.018573 19709 io_factory.h:38] Use default file location(local) to open: ./grape-test/p2p-31.e
+I0209 21:33:31.160012 19709 io_factory.h:38] Use default file location(local) to open: ./grape-test/p2p-31.v
+I0209 21:33:31.205337 19709 sync_worker.cc:437] [worker1] finished loading graphs...
+I0209 21:33:31.206326 19709 wcc.h:38] Create a instace of WCC.
+I0209 21:33:31.206346 19709 sync_worker.cc:44] 2 - > 1
+I0209 21:33:31.224547 19850 wcc.cc:235] [frag1] partial result output: ./wcc_frag_1_20180209_093331

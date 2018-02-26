@@ -1,0 +1,4 @@
+Log file created at: 2018/02/09 22:00:19
+Running on machine: ldz
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0209 22:00:19.801782 23023 coordinator.cc:65] sssp query is invalid

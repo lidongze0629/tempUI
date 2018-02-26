@@ -1,0 +1,26 @@
+Log file created at: 2018/02/09 21:33:29
+Running on machine: ldz
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0209 21:33:29.329267 19708 grape.cc:17] Welcome to GRAPE!
+I0209 21:33:29.333658 19708 io_factory.h:38] Use default file location(local) to open: ./grape-test/twitter.r
+I0209 21:33:29.376863 19708 io_factory.h:38] Use default file location(local) to open: ./grape-test/twitter.e
+I0209 21:33:30.577760 19708 io_factory.h:38] Use default file location(local) to open: ./grape-test/twitter.v
+I0209 21:33:30.643988 19708 sync_worker.cc:437] [worker0] finished loading graphs...
+I0209 21:33:30.644824 19708 sssp.h:38] Create a instance of SSSP.
+I0209 21:33:30.645150 19708 bfs.h:38] Create a instance of BFS.
+I0209 21:33:30.645702 19708 pagerank.h:38] Create a instace of Pagerank.
+I0209 21:33:30.648185 19708 sync_worker.cc:44] 1 - > 0
+I0209 21:33:30.648656 19723 sssp.cc:51] query source = 4
+I0209 21:33:30.746677 19760 sssp.cc:205] [frag0] partial result output: ./sssp_4_frag_0_20180209_093330
+I0209 21:33:30.749508 19708 sync_worker.cc:44] 1 - > 0
+I0209 21:33:30.749732 19769 bfs.cc:36] source = 1, bound = 3
+I0209 21:33:30.806892 19781 bfs.cc:169] [frag0] partial result output: ./bfs_1-3_frag_0_20180209_093330
+I0209 21:33:30.815784 19708 sync_worker.cc:44] 1 - > 0
+I0209 21:33:30.985812 19829 pagerank.cc:182] [frag0] partial result output: ./pagerank_frag_0_20180209_093330
+I0209 21:33:30.991453 19708 io_factory.h:38] Use default file location(local) to open: ./grape-test/p2p-31.r4
+I0209 21:33:31.018215 19708 io_factory.h:38] Use default file location(local) to open: ./grape-test/p2p-31.e
+I0209 21:33:31.106009 19708 io_factory.h:38] Use default file location(local) to open: ./grape-test/p2p-31.v
+I0209 21:33:31.134975 19708 sync_worker.cc:437] [worker0] finished loading graphs...
+I0209 21:33:31.206146 19708 wcc.h:38] Create a instace of WCC.
+I0209 21:33:31.206171 19708 sync_worker.cc:44] 1 - > 0
+I0209 21:33:31.224386 19851 wcc.cc:235] [frag0] partial result output: ./wcc_frag_0_20180209_093331

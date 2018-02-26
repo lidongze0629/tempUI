@@ -1,0 +1,661 @@
+Log file created at: 2018/02/09 21:33:29
+Running on machine: ldz
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0209 21:33:29.324479 19707 grape.cc:17] Welcome to GRAPE!
+I0209 21:33:29.332736 19707 io_factory.h:38] Use default file location(local) to open: ../misc/batch_test.gql
+I0209 21:33:29.332825 19707 dispatcher.cc:92] Get a gql: twitter = loadgraph("grape-test/twitter.yaml")
+I0209 21:33:30.644042 19707 dispatcher.cc:92] Get a gql: sssp = loadapp("grape-test/sssp.yaml")
+I0209 21:33:30.644500 19707 coordinator.cc:254] loaded application: sssp
+I0209 21:33:30.644513 19707 dispatcher.cc:92] Get a gql: bfs = loadapp("grape-test/bfs.yaml")
+I0209 21:33:30.644889 19707 coordinator.cc:254] loaded application: bfs
+I0209 21:33:30.644898 19707 dispatcher.cc:92] Get a gql: pr = loadapp("grape-test/pagerank.yaml")
+I0209 21:33:30.645383 19707 coordinator.cc:254] loaded application: pr
+I0209 21:33:30.645422 19707 dispatcher.cc:92] Get a gql: sssp.config("enable_result_output", true)
+I0209 21:33:30.646486 19707 dispatcher.cc:92] Get a gql: bfs.config("result_prefix", ".")
+I0209 21:33:30.647501 19707 dispatcher.cc:92] Get a gql: sssp.query(4)
+I0209 21:33:30.648200 19707 coordinator.cc:83] [coordinator]: Job_1518183210648186.000000
+I0209 21:33:30.648206 19707 coordinator.cc:84] [coordinator]: PEval begin...
+I0209 21:33:30.657629 19707 coordinator.cc:88] [coordinator]: PEval end...
+I0209 21:33:30.657708 19707 coordinator.cc:99] [coordinator]: IncEval-2 begin...
+I0209 21:33:30.676206 19707 coordinator.cc:103] [coordinator]: IncEval-2 end...
+I0209 21:33:30.676290 19707 coordinator.cc:99] [coordinator]: IncEval-3 begin...
+I0209 21:33:30.684106 19707 coordinator.cc:103] [coordinator]: IncEval-3 end...
+I0209 21:33:30.684161 19707 coordinator.cc:99] [coordinator]: IncEval-4 begin...
+I0209 21:33:30.687152 19707 coordinator.cc:103] [coordinator]: IncEval-4 end...
+I0209 21:33:30.687187 19707 coordinator.cc:99] [coordinator]: IncEval-5 begin...
+I0209 21:33:30.687793 19707 coordinator.cc:103] [coordinator]: IncEval-5 end...
+I0209 21:33:30.687829 19707 coordinator.cc:99] [coordinator]: IncEval-6 begin...
+I0209 21:33:30.688064 19707 coordinator.cc:103] [coordinator]: IncEval-6 end...
+I0209 21:33:30.688082 19707 coordinator.cc:99] [coordinator]: IncEval-7 begin...
+I0209 21:33:30.688225 19707 coordinator.cc:103] [coordinator]: IncEval-7 end...
+I0209 21:33:30.688242 19707 coordinator.cc:99] [coordinator]: IncEval-8 begin...
+I0209 21:33:30.688330 19707 coordinator.cc:103] [coordinator]: IncEval-8 end...
+I0209 21:33:30.688364 19707 coordinator.cc:99] [coordinator]: IncEval-9 begin...
+I0209 21:33:30.688421 19707 coordinator.cc:103] [coordinator]: IncEval-9 end...
+I0209 21:33:30.748075 19707 job_metrics_coordinator.cc:35] -------------------------------------------------
+I0209 21:33:30.748090 19707 job_metrics_coordinator.cc:36] grape_uptime: 1.41537s
+I0209 21:33:30.748100 19707 job_metrics_coordinator.cc:38] load_graph_time: 1s
+I0209 21:33:30.748105 19707 job_metrics_coordinator.cc:39] app_name: sssp
+I0209 21:33:30.748107 19707 job_metrics_coordinator.cc:40] query_info: 4; 
+I0209 21:33:30.748111 19707 job_metrics_coordinator.cc:41] whole-query-time: 0.040246s
+I0209 21:33:30.748114 19707 job_metrics_coordinator.cc:42] -part-eval-time: 0.0397661s
+I0209 21:33:30.748118 19707 job_metrics_coordinator.cc:43] -part-comm-time: 0.000252962s
+I0209 21:33:30.748122 19707 job_metrics_coordinator.cc:44] msg-count: 42930
+I0209 21:33:30.748126 19707 job_metrics_coordinator.cc:45] msg-bytes: 515160
+I0209 21:33:30.748129 19707 job_metrics_coordinator.cc:46] rounds: 9
+I0209 21:33:30.748133 19707 job_metrics_coordinator.cc:47] -------------------------------------------------
+I0209 21:33:30.748141 19707 job_metrics_coordinator.cc:50] ======================= superstep 0
+I0209 21:33:30.748143 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:30.748147 19707 job_metrics_coordinator.cc:53] [worker_1]	0.009009
+I0209 21:33:30.748150 19707 job_metrics_coordinator.cc:53] [worker_2]	0.003547
+I0209 21:33:30.748154 19707 job_metrics_coordinator.cc:53] [worker_3]	0.008926
+I0209 21:33:30.748157 19707 job_metrics_coordinator.cc:53] [worker_4]	0.008971
+I0209 21:33:30.748162 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:30.748181 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000083
+I0209 21:33:30.748185 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000084
+I0209 21:33:30.748188 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000083
+I0209 21:33:30.748193 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000084
+I0209 21:33:30.748196 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:30.748199 19707 job_metrics_coordinator.cc:65] [worker_1]	0
+I0209 21:33:30.748203 19707 job_metrics_coordinator.cc:65] [worker_2]	0
+I0209 21:33:30.748206 19707 job_metrics_coordinator.cc:65] [worker_3]	0
+I0209 21:33:30.748209 19707 job_metrics_coordinator.cc:65] [worker_4]	3095
+I0209 21:33:30.748212 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:30.748215 19707 job_metrics_coordinator.cc:71] [worker_1]	0
+I0209 21:33:30.748219 19707 job_metrics_coordinator.cc:71] [worker_2]	0
+I0209 21:33:30.748221 19707 job_metrics_coordinator.cc:71] [worker_3]	0
+I0209 21:33:30.748224 19707 job_metrics_coordinator.cc:71] [worker_4]	37140
+I0209 21:33:30.748227 19707 job_metrics_coordinator.cc:50] ======================= superstep 1
+I0209 21:33:30.748231 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:30.748234 19707 job_metrics_coordinator.cc:53] [worker_1]	0.018492
+I0209 21:33:30.748237 19707 job_metrics_coordinator.cc:53] [worker_2]	0.018492
+I0209 21:33:30.748241 19707 job_metrics_coordinator.cc:53] [worker_3]	0.018492
+I0209 21:33:30.748245 19707 job_metrics_coordinator.cc:53] [worker_4]	0.018491
+I0209 21:33:30.748248 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:30.748251 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000089
+I0209 21:33:30.748255 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000089
+I0209 21:33:30.748260 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000089
+I0209 21:33:30.748262 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000090
+I0209 21:33:30.748265 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:30.748268 19707 job_metrics_coordinator.cc:65] [worker_1]	3931
+I0209 21:33:30.748272 19707 job_metrics_coordinator.cc:65] [worker_2]	5530
+I0209 21:33:30.748275 19707 job_metrics_coordinator.cc:65] [worker_3]	6144
+I0209 21:33:30.748278 19707 job_metrics_coordinator.cc:65] [worker_4]	0
+I0209 21:33:30.748281 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:30.748284 19707 job_metrics_coordinator.cc:71] [worker_1]	47172
+I0209 21:33:30.748287 19707 job_metrics_coordinator.cc:71] [worker_2]	66360
+I0209 21:33:30.748291 19707 job_metrics_coordinator.cc:71] [worker_3]	73728
+I0209 21:33:30.748293 19707 job_metrics_coordinator.cc:71] [worker_4]	0
+I0209 21:33:30.748297 19707 job_metrics_coordinator.cc:50] ======================= superstep 2
+I0209 21:33:30.748301 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:30.748302 19707 job_metrics_coordinator.cc:53] [worker_1]	0.007813
+I0209 21:33:30.748306 19707 job_metrics_coordinator.cc:53] [worker_2]	0.007813
+I0209 21:33:30.748311 19707 job_metrics_coordinator.cc:53] [worker_3]	0.007813
+I0209 21:33:30.748313 19707 job_metrics_coordinator.cc:53] [worker_4]	0.007813
+I0209 21:33:30.748317 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:30.748320 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000057
+I0209 21:33:30.748324 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000058
+I0209 21:33:30.748327 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000057
+I0209 21:33:30.748332 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000058
+I0209 21:33:30.748334 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:30.748338 19707 job_metrics_coordinator.cc:65] [worker_1]	2442
+I0209 21:33:30.748340 19707 job_metrics_coordinator.cc:65] [worker_2]	3983
+I0209 21:33:30.748343 19707 job_metrics_coordinator.cc:65] [worker_3]	5354
+I0209 21:33:30.748347 19707 job_metrics_coordinator.cc:65] [worker_4]	3081
+I0209 21:33:30.748350 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:30.748353 19707 job_metrics_coordinator.cc:71] [worker_1]	29304
+I0209 21:33:30.748363 19707 job_metrics_coordinator.cc:71] [worker_2]	47796
+I0209 21:33:30.748365 19707 job_metrics_coordinator.cc:71] [worker_3]	64248
+I0209 21:33:30.748369 19707 job_metrics_coordinator.cc:71] [worker_4]	36972
+I0209 21:33:30.748373 19707 job_metrics_coordinator.cc:50] ======================= superstep 3
+I0209 21:33:30.748375 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:30.748378 19707 job_metrics_coordinator.cc:53] [worker_1]	0.002987
+I0209 21:33:30.748383 19707 job_metrics_coordinator.cc:53] [worker_2]	0.002987
+I0209 21:33:30.748385 19707 job_metrics_coordinator.cc:53] [worker_3]	0.002988
+I0209 21:33:30.748389 19707 job_metrics_coordinator.cc:53] [worker_4]	0.002987
+I0209 21:33:30.748392 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:30.748395 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000036
+I0209 21:33:30.748399 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000036
+I0209 21:33:30.748402 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000037
+I0209 21:33:30.748406 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000037
+I0209 21:33:30.748410 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:30.748414 19707 job_metrics_coordinator.cc:65] [worker_1]	1495
+I0209 21:33:30.748416 19707 job_metrics_coordinator.cc:65] [worker_2]	2674
+I0209 21:33:30.748419 19707 job_metrics_coordinator.cc:65] [worker_3]	556
+I0209 21:33:30.748422 19707 job_metrics_coordinator.cc:65] [worker_4]	2551
+I0209 21:33:30.748425 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:30.748428 19707 job_metrics_coordinator.cc:71] [worker_1]	17940
+I0209 21:33:30.748431 19707 job_metrics_coordinator.cc:71] [worker_2]	32088
+I0209 21:33:30.748435 19707 job_metrics_coordinator.cc:71] [worker_3]	6672
+I0209 21:33:30.748437 19707 job_metrics_coordinator.cc:71] [worker_4]	30612
+I0209 21:33:30.748440 19707 job_metrics_coordinator.cc:50] ======================= superstep 4
+I0209 21:33:30.748443 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:30.748447 19707 job_metrics_coordinator.cc:53] [worker_1]	0.000605
+I0209 21:33:30.748450 19707 job_metrics_coordinator.cc:53] [worker_2]	0.000605
+I0209 21:33:30.748453 19707 job_metrics_coordinator.cc:53] [worker_3]	0.000606
+I0209 21:33:30.748457 19707 job_metrics_coordinator.cc:53] [worker_4]	0.000605
+I0209 21:33:30.748461 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:30.748464 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000036
+I0209 21:33:30.748467 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000036
+I0209 21:33:30.748471 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000035
+I0209 21:33:30.748476 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000036
+I0209 21:33:30.748478 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:30.748481 19707 job_metrics_coordinator.cc:65] [worker_1]	405
+I0209 21:33:30.748484 19707 job_metrics_coordinator.cc:65] [worker_2]	457
+I0209 21:33:30.748488 19707 job_metrics_coordinator.cc:65] [worker_3]	345
+I0209 21:33:30.748492 19707 job_metrics_coordinator.cc:65] [worker_4]	482
+I0209 21:33:30.748494 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:30.748497 19707 job_metrics_coordinator.cc:71] [worker_1]	4860
+I0209 21:33:30.748500 19707 job_metrics_coordinator.cc:71] [worker_2]	5484
+I0209 21:33:30.748503 19707 job_metrics_coordinator.cc:71] [worker_3]	4140
+I0209 21:33:30.748507 19707 job_metrics_coordinator.cc:71] [worker_4]	5784
+I0209 21:33:30.748509 19707 job_metrics_coordinator.cc:50] ======================= superstep 5
+I0209 21:33:30.748512 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:30.748515 19707 job_metrics_coordinator.cc:53] [worker_1]	0.000235
+I0209 21:33:30.748519 19707 job_metrics_coordinator.cc:53] [worker_2]	0.000235
+I0209 21:33:30.748522 19707 job_metrics_coordinator.cc:53] [worker_3]	0.000235
+I0209 21:33:30.748527 19707 job_metrics_coordinator.cc:53] [worker_4]	0.000235
+I0209 21:33:30.748534 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:30.748538 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000017
+I0209 21:33:30.748541 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000017
+I0209 21:33:30.748545 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000017
+I0209 21:33:30.748549 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000017
+I0209 21:33:30.748553 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:30.748555 19707 job_metrics_coordinator.cc:65] [worker_1]	79
+I0209 21:33:30.748558 19707 job_metrics_coordinator.cc:65] [worker_2]	60
+I0209 21:33:30.748561 19707 job_metrics_coordinator.cc:65] [worker_3]	130
+I0209 21:33:30.748564 19707 job_metrics_coordinator.cc:65] [worker_4]	107
+I0209 21:33:30.748567 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:30.748571 19707 job_metrics_coordinator.cc:71] [worker_1]	948
+I0209 21:33:30.748574 19707 job_metrics_coordinator.cc:71] [worker_2]	720
+I0209 21:33:30.748576 19707 job_metrics_coordinator.cc:71] [worker_3]	1560
+I0209 21:33:30.748579 19707 job_metrics_coordinator.cc:71] [worker_4]	1284
+I0209 21:33:30.748584 19707 job_metrics_coordinator.cc:50] ======================= superstep 6
+I0209 21:33:30.748586 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:30.748589 19707 job_metrics_coordinator.cc:53] [worker_1]	0.000142
+I0209 21:33:30.748592 19707 job_metrics_coordinator.cc:53] [worker_2]	0.000142
+I0209 21:33:30.748596 19707 job_metrics_coordinator.cc:53] [worker_3]	0.000142
+I0209 21:33:30.748600 19707 job_metrics_coordinator.cc:53] [worker_4]	0.000142
+I0209 21:33:30.748603 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:30.748606 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000018
+I0209 21:33:30.748610 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000018
+I0209 21:33:30.748613 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000019
+I0209 21:33:30.748616 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000018
+I0209 21:33:30.748620 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:30.748623 19707 job_metrics_coordinator.cc:65] [worker_1]	3
+I0209 21:33:30.748626 19707 job_metrics_coordinator.cc:65] [worker_2]	19
+I0209 21:33:30.748630 19707 job_metrics_coordinator.cc:65] [worker_3]	5
+I0209 21:33:30.748632 19707 job_metrics_coordinator.cc:65] [worker_4]	1
+I0209 21:33:30.748636 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:30.748639 19707 job_metrics_coordinator.cc:71] [worker_1]	36
+I0209 21:33:30.748642 19707 job_metrics_coordinator.cc:71] [worker_2]	228
+I0209 21:33:30.748646 19707 job_metrics_coordinator.cc:71] [worker_3]	60
+I0209 21:33:30.748648 19707 job_metrics_coordinator.cc:71] [worker_4]	12
+I0209 21:33:30.748651 19707 job_metrics_coordinator.cc:50] ======================= superstep 7
+I0209 21:33:30.748654 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:30.748657 19707 job_metrics_coordinator.cc:53] [worker_1]	0.000087
+I0209 21:33:30.748661 19707 job_metrics_coordinator.cc:53] [worker_2]	0.000087
+I0209 21:33:30.748664 19707 job_metrics_coordinator.cc:53] [worker_3]	0.000088
+I0209 21:33:30.748668 19707 job_metrics_coordinator.cc:53] [worker_4]	0.000088
+I0209 21:33:30.748672 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:30.748675 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000034
+I0209 21:33:30.748678 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000034
+I0209 21:33:30.748682 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000033
+I0209 21:33:30.748685 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000034
+I0209 21:33:30.748689 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:30.748692 19707 job_metrics_coordinator.cc:65] [worker_1]	0
+I0209 21:33:30.748695 19707 job_metrics_coordinator.cc:65] [worker_2]	0
+I0209 21:33:30.748698 19707 job_metrics_coordinator.cc:65] [worker_3]	1
+I0209 21:33:30.748702 19707 job_metrics_coordinator.cc:65] [worker_4]	0
+I0209 21:33:30.748704 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:30.748713 19707 job_metrics_coordinator.cc:71] [worker_1]	0
+I0209 21:33:30.748715 19707 job_metrics_coordinator.cc:71] [worker_2]	0
+I0209 21:33:30.748719 19707 job_metrics_coordinator.cc:71] [worker_3]	12
+I0209 21:33:30.748723 19707 job_metrics_coordinator.cc:71] [worker_4]	0
+I0209 21:33:30.748725 19707 job_metrics_coordinator.cc:50] ======================= superstep 8
+I0209 21:33:30.748728 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:30.748731 19707 job_metrics_coordinator.cc:53] [worker_1]	0.000057
+I0209 21:33:30.748735 19707 job_metrics_coordinator.cc:53] [worker_2]	0.000057
+I0209 21:33:30.748739 19707 job_metrics_coordinator.cc:53] [worker_3]	0.000058
+I0209 21:33:30.748741 19707 job_metrics_coordinator.cc:53] [worker_4]	0.000057
+I0209 21:33:30.748745 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:30.748749 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000018
+I0209 21:33:30.748752 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000018
+I0209 21:33:30.748755 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000017
+I0209 21:33:30.748759 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000018
+I0209 21:33:30.748764 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:30.748765 19707 job_metrics_coordinator.cc:65] [worker_1]	0
+I0209 21:33:30.748769 19707 job_metrics_coordinator.cc:65] [worker_2]	0
+I0209 21:33:30.748772 19707 job_metrics_coordinator.cc:65] [worker_3]	0
+I0209 21:33:30.748775 19707 job_metrics_coordinator.cc:65] [worker_4]	0
+I0209 21:33:30.748778 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:30.748781 19707 job_metrics_coordinator.cc:71] [worker_1]	0
+I0209 21:33:30.748785 19707 job_metrics_coordinator.cc:71] [worker_2]	0
+I0209 21:33:30.748787 19707 job_metrics_coordinator.cc:71] [worker_3]	0
+I0209 21:33:30.748790 19707 job_metrics_coordinator.cc:71] [worker_4]	0
+I0209 21:33:30.748797 19707 dispatcher.cc:92] Get a gql: bfs.query(1 3)
+I0209 21:33:30.749507 19707 coordinator.cc:83] [coordinator]: Job_1518183210749500.000000
+I0209 21:33:30.749512 19707 coordinator.cc:84] [coordinator]: PEval begin...
+I0209 21:33:30.779763 19707 coordinator.cc:88] [coordinator]: PEval end...
+I0209 21:33:30.779829 19707 coordinator.cc:99] [coordinator]: IncEval-2 begin...
+I0209 21:33:30.797169 19707 coordinator.cc:103] [coordinator]: IncEval-2 end...
+I0209 21:33:30.797230 19707 coordinator.cc:99] [coordinator]: IncEval-3 begin...
+I0209 21:33:30.797657 19707 coordinator.cc:103] [coordinator]: IncEval-3 end...
+I0209 21:33:30.814992 19707 job_metrics_coordinator.cc:35] -------------------------------------------------
+I0209 21:33:30.815006 19707 job_metrics_coordinator.cc:36] grape_uptime: 1.48229s
+I0209 21:33:30.815011 19707 job_metrics_coordinator.cc:38] load_graph_time: 1s
+I0209 21:33:30.815013 19707 job_metrics_coordinator.cc:39] app_name: bfs
+I0209 21:33:30.815016 19707 job_metrics_coordinator.cc:40] query_info: 1; 3; 
+I0209 21:33:30.815018 19707 job_metrics_coordinator.cc:41] whole-query-time: 0.048198s
+I0209 21:33:30.815021 19707 job_metrics_coordinator.cc:42] -part-eval-time: 0.047986s
+I0209 21:33:30.815022 19707 job_metrics_coordinator.cc:43] -part-comm-time: 0.000102997s
+I0209 21:33:30.815026 19707 job_metrics_coordinator.cc:44] msg-count: 2277
+I0209 21:33:30.815027 19707 job_metrics_coordinator.cc:45] msg-bytes: 18216
+I0209 21:33:30.815029 19707 job_metrics_coordinator.cc:46] rounds: 3
+I0209 21:33:30.815032 19707 job_metrics_coordinator.cc:47] -------------------------------------------------
+I0209 21:33:30.815033 19707 job_metrics_coordinator.cc:50] ======================= superstep 0
+I0209 21:33:30.815035 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:30.815037 19707 job_metrics_coordinator.cc:53] [worker_1]	0.030117
+I0209 21:33:30.815040 19707 job_metrics_coordinator.cc:53] [worker_2]	0.028135
+I0209 21:33:30.815042 19707 job_metrics_coordinator.cc:53] [worker_3]	0.029936
+I0209 21:33:30.815045 19707 job_metrics_coordinator.cc:53] [worker_4]	0.030135
+I0209 21:33:30.815063 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:30.815066 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000069
+I0209 21:33:30.815068 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000071
+I0209 21:33:30.815071 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000072
+I0209 21:33:30.815073 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000074
+I0209 21:33:30.815075 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:30.815078 19707 job_metrics_coordinator.cc:65] [worker_1]	0
+I0209 21:33:30.815080 19707 job_metrics_coordinator.cc:65] [worker_2]	0
+I0209 21:33:30.815081 19707 job_metrics_coordinator.cc:65] [worker_3]	0
+I0209 21:33:30.815083 19707 job_metrics_coordinator.cc:65] [worker_4]	628
+I0209 21:33:30.815085 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:30.815088 19707 job_metrics_coordinator.cc:71] [worker_1]	0
+I0209 21:33:30.815090 19707 job_metrics_coordinator.cc:71] [worker_2]	0
+I0209 21:33:30.815091 19707 job_metrics_coordinator.cc:71] [worker_3]	0
+I0209 21:33:30.815093 19707 job_metrics_coordinator.cc:71] [worker_4]	5024
+I0209 21:33:30.815096 19707 job_metrics_coordinator.cc:50] ======================= superstep 1
+I0209 21:33:30.815099 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:30.815099 19707 job_metrics_coordinator.cc:53] [worker_1]	0.017337
+I0209 21:33:30.815102 19707 job_metrics_coordinator.cc:53] [worker_2]	0.017337
+I0209 21:33:30.815104 19707 job_metrics_coordinator.cc:53] [worker_3]	0.017337
+I0209 21:33:30.815106 19707 job_metrics_coordinator.cc:53] [worker_4]	0.017337
+I0209 21:33:30.815109 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:30.815110 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000064
+I0209 21:33:30.815114 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000064
+I0209 21:33:30.815115 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000064
+I0209 21:33:30.815117 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000064
+I0209 21:33:30.815119 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:30.815122 19707 job_metrics_coordinator.cc:65] [worker_1]	899
+I0209 21:33:30.815124 19707 job_metrics_coordinator.cc:65] [worker_2]	646
+I0209 21:33:30.815125 19707 job_metrics_coordinator.cc:65] [worker_3]	104
+I0209 21:33:30.815127 19707 job_metrics_coordinator.cc:65] [worker_4]	0
+I0209 21:33:30.815130 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:30.815132 19707 job_metrics_coordinator.cc:71] [worker_1]	7192
+I0209 21:33:30.815134 19707 job_metrics_coordinator.cc:71] [worker_2]	5168
+I0209 21:33:30.815135 19707 job_metrics_coordinator.cc:71] [worker_3]	832
+I0209 21:33:30.815138 19707 job_metrics_coordinator.cc:71] [worker_4]	0
+I0209 21:33:30.815140 19707 job_metrics_coordinator.cc:50] ======================= superstep 2
+I0209 21:33:30.815141 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:30.815143 19707 job_metrics_coordinator.cc:53] [worker_1]	0.000426
+I0209 21:33:30.815146 19707 job_metrics_coordinator.cc:53] [worker_2]	0.000426
+I0209 21:33:30.815148 19707 job_metrics_coordinator.cc:53] [worker_3]	0.000428
+I0209 21:33:30.815150 19707 job_metrics_coordinator.cc:53] [worker_4]	0.000427
+I0209 21:33:30.815152 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:30.815155 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000043
+I0209 21:33:30.815156 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000042
+I0209 21:33:30.815160 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000041
+I0209 21:33:30.815161 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000043
+I0209 21:33:30.815163 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:30.815165 19707 job_metrics_coordinator.cc:65] [worker_1]	0
+I0209 21:33:30.815167 19707 job_metrics_coordinator.cc:65] [worker_2]	0
+I0209 21:33:30.815170 19707 job_metrics_coordinator.cc:65] [worker_3]	0
+I0209 21:33:30.815172 19707 job_metrics_coordinator.cc:65] [worker_4]	0
+I0209 21:33:30.815173 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:30.815181 19707 job_metrics_coordinator.cc:71] [worker_1]	0
+I0209 21:33:30.815182 19707 job_metrics_coordinator.cc:71] [worker_2]	0
+I0209 21:33:30.815186 19707 job_metrics_coordinator.cc:71] [worker_3]	0
+I0209 21:33:30.815187 19707 job_metrics_coordinator.cc:71] [worker_4]	0
+I0209 21:33:30.815193 19707 dispatcher.cc:92] Get a gql: pr.query(0.8 0.01 100 0)
+I0209 21:33:30.815780 19707 coordinator.cc:83] [coordinator]: Job_1518183210815770.000000
+I0209 21:33:30.815790 19707 coordinator.cc:84] [coordinator]: PEval begin...
+I0209 21:33:30.887887 19707 coordinator.cc:88] [coordinator]: PEval end...
+I0209 21:33:30.887958 19707 coordinator.cc:99] [coordinator]: IncEval-2 begin...
+I0209 21:33:30.897390 19707 coordinator.cc:103] [coordinator]: IncEval-2 end...
+I0209 21:33:30.897470 19707 coordinator.cc:99] [coordinator]: IncEval-3 begin...
+I0209 21:33:30.906220 19707 coordinator.cc:103] [coordinator]: IncEval-3 end...
+I0209 21:33:30.906272 19707 coordinator.cc:99] [coordinator]: IncEval-4 begin...
+I0209 21:33:30.915817 19707 coordinator.cc:103] [coordinator]: IncEval-4 end...
+I0209 21:33:30.915882 19707 coordinator.cc:99] [coordinator]: IncEval-5 begin...
+I0209 21:33:30.930820 19707 coordinator.cc:103] [coordinator]: IncEval-5 end...
+I0209 21:33:30.930888 19707 coordinator.cc:99] [coordinator]: IncEval-6 begin...
+I0209 21:33:30.940801 19707 coordinator.cc:103] [coordinator]: IncEval-6 end...
+I0209 21:33:30.940861 19707 coordinator.cc:99] [coordinator]: IncEval-7 begin...
+I0209 21:33:30.950841 19707 coordinator.cc:103] [coordinator]: IncEval-7 end...
+I0209 21:33:30.950917 19707 coordinator.cc:99] [coordinator]: IncEval-8 begin...
+I0209 21:33:30.964104 19707 coordinator.cc:103] [coordinator]: IncEval-8 end...
+I0209 21:33:30.964146 19707 coordinator.cc:99] [coordinator]: IncEval-9 begin...
+I0209 21:33:30.972826 19707 coordinator.cc:103] [coordinator]: IncEval-9 end...
+I0209 21:33:30.986582 19707 job_metrics_coordinator.cc:35] -------------------------------------------------
+I0209 21:33:30.986593 19707 job_metrics_coordinator.cc:36] grape_uptime: 1.65388s
+I0209 21:33:30.986598 19707 job_metrics_coordinator.cc:38] load_graph_time: 1s
+I0209 21:33:30.986600 19707 job_metrics_coordinator.cc:39] app_name: pr
+I0209 21:33:30.986603 19707 job_metrics_coordinator.cc:40] query_info: 0.8; 0.01; 100; 0; 
+I0209 21:33:30.986603 19707 job_metrics_coordinator.cc:41] whole-query-time: 0.157081s
+I0209 21:33:30.986606 19707 job_metrics_coordinator.cc:42] -part-eval-time: 0.15643s
+I0209 21:33:30.986609 19707 job_metrics_coordinator.cc:43] -part-comm-time: 0.000338554s
+I0209 21:33:30.986611 19707 job_metrics_coordinator.cc:44] msg-count: 147749
+I0209 21:33:30.986613 19707 job_metrics_coordinator.cc:45] msg-bytes: 1772988
+I0209 21:33:30.986615 19707 job_metrics_coordinator.cc:46] rounds: 9
+I0209 21:33:30.986618 19707 job_metrics_coordinator.cc:47] -------------------------------------------------
+I0209 21:33:30.986619 19707 job_metrics_coordinator.cc:50] ======================= superstep 0
+I0209 21:33:30.986621 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:30.986624 19707 job_metrics_coordinator.cc:53] [worker_1]	0.069692
+I0209 21:33:30.986626 19707 job_metrics_coordinator.cc:53] [worker_2]	0.069996
+I0209 21:33:30.986629 19707 job_metrics_coordinator.cc:53] [worker_3]	0.070225
+I0209 21:33:30.986630 19707 job_metrics_coordinator.cc:53] [worker_4]	0.070350
+I0209 21:33:30.986632 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:30.986634 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000079
+I0209 21:33:30.986637 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000079
+I0209 21:33:30.986639 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000079
+I0209 21:33:30.986641 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000079
+I0209 21:33:30.986644 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:30.986646 19707 job_metrics_coordinator.cc:65] [worker_1]	4332
+I0209 21:33:30.986649 19707 job_metrics_coordinator.cc:65] [worker_2]	5971
+I0209 21:33:30.986661 19707 job_metrics_coordinator.cc:65] [worker_3]	6170
+I0209 21:33:30.986665 19707 job_metrics_coordinator.cc:65] [worker_4]	3781
+I0209 21:33:30.986665 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:30.986667 19707 job_metrics_coordinator.cc:71] [worker_1]	51984
+I0209 21:33:30.986670 19707 job_metrics_coordinator.cc:71] [worker_2]	71652
+I0209 21:33:30.986672 19707 job_metrics_coordinator.cc:71] [worker_3]	74040
+I0209 21:33:30.986673 19707 job_metrics_coordinator.cc:71] [worker_4]	45372
+I0209 21:33:30.986675 19707 job_metrics_coordinator.cc:50] ======================= superstep 1
+I0209 21:33:30.986677 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:30.986680 19707 job_metrics_coordinator.cc:53] [worker_1]	0.009430
+I0209 21:33:30.986682 19707 job_metrics_coordinator.cc:53] [worker_2]	0.009430
+I0209 21:33:30.986685 19707 job_metrics_coordinator.cc:53] [worker_3]	0.009430
+I0209 21:33:30.986686 19707 job_metrics_coordinator.cc:53] [worker_4]	0.009431
+I0209 21:33:30.986688 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:30.986690 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000082
+I0209 21:33:30.986692 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000082
+I0209 21:33:30.986696 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000082
+I0209 21:33:30.986697 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000082
+I0209 21:33:30.986699 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:30.986701 19707 job_metrics_coordinator.cc:65] [worker_1]	4332
+I0209 21:33:30.986703 19707 job_metrics_coordinator.cc:65] [worker_2]	5971
+I0209 21:33:30.986706 19707 job_metrics_coordinator.cc:65] [worker_3]	6170
+I0209 21:33:30.986707 19707 job_metrics_coordinator.cc:65] [worker_4]	3781
+I0209 21:33:30.986709 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:30.986711 19707 job_metrics_coordinator.cc:71] [worker_1]	51984
+I0209 21:33:30.986713 19707 job_metrics_coordinator.cc:71] [worker_2]	71652
+I0209 21:33:30.986716 19707 job_metrics_coordinator.cc:71] [worker_3]	74040
+I0209 21:33:30.986717 19707 job_metrics_coordinator.cc:71] [worker_4]	45372
+I0209 21:33:30.986719 19707 job_metrics_coordinator.cc:50] ======================= superstep 2
+I0209 21:33:30.986721 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:30.986723 19707 job_metrics_coordinator.cc:53] [worker_1]	0.008749
+I0209 21:33:30.986726 19707 job_metrics_coordinator.cc:53] [worker_2]	0.008750
+I0209 21:33:30.986727 19707 job_metrics_coordinator.cc:53] [worker_3]	0.008749
+I0209 21:33:30.986730 19707 job_metrics_coordinator.cc:53] [worker_4]	0.008749
+I0209 21:33:30.986732 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:30.986734 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000053
+I0209 21:33:30.986737 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000053
+I0209 21:33:30.986738 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000053
+I0209 21:33:30.986740 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000054
+I0209 21:33:30.986743 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:30.986744 19707 job_metrics_coordinator.cc:65] [worker_1]	4332
+I0209 21:33:30.986747 19707 job_metrics_coordinator.cc:65] [worker_2]	5971
+I0209 21:33:30.986748 19707 job_metrics_coordinator.cc:65] [worker_3]	6170
+I0209 21:33:30.986750 19707 job_metrics_coordinator.cc:65] [worker_4]	3781
+I0209 21:33:30.986752 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:30.986754 19707 job_metrics_coordinator.cc:71] [worker_1]	51984
+I0209 21:33:30.986757 19707 job_metrics_coordinator.cc:71] [worker_2]	71652
+I0209 21:33:30.986758 19707 job_metrics_coordinator.cc:71] [worker_3]	74040
+I0209 21:33:30.986760 19707 job_metrics_coordinator.cc:71] [worker_4]	45372
+I0209 21:33:30.986763 19707 job_metrics_coordinator.cc:50] ======================= superstep 3
+I0209 21:33:30.986764 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:30.986766 19707 job_metrics_coordinator.cc:53] [worker_1]	0.009543
+I0209 21:33:30.986773 19707 job_metrics_coordinator.cc:53] [worker_2]	0.009544
+I0209 21:33:30.986775 19707 job_metrics_coordinator.cc:53] [worker_3]	0.009544
+I0209 21:33:30.986778 19707 job_metrics_coordinator.cc:53] [worker_4]	0.009544
+I0209 21:33:30.986779 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:30.986781 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000067
+I0209 21:33:30.986784 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000067
+I0209 21:33:30.986786 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000066
+I0209 21:33:30.986788 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000067
+I0209 21:33:30.986790 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:30.986793 19707 job_metrics_coordinator.cc:65] [worker_1]	4332
+I0209 21:33:30.986794 19707 job_metrics_coordinator.cc:65] [worker_2]	5971
+I0209 21:33:30.986796 19707 job_metrics_coordinator.cc:65] [worker_3]	6170
+I0209 21:33:30.986799 19707 job_metrics_coordinator.cc:65] [worker_4]	3781
+I0209 21:33:30.986800 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:30.986802 19707 job_metrics_coordinator.cc:71] [worker_1]	51984
+I0209 21:33:30.986804 19707 job_metrics_coordinator.cc:71] [worker_2]	71652
+I0209 21:33:30.986805 19707 job_metrics_coordinator.cc:71] [worker_3]	74040
+I0209 21:33:30.986809 19707 job_metrics_coordinator.cc:71] [worker_4]	45372
+I0209 21:33:30.986810 19707 job_metrics_coordinator.cc:50] ======================= superstep 4
+I0209 21:33:30.986811 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:30.986814 19707 job_metrics_coordinator.cc:53] [worker_1]	0.014936
+I0209 21:33:30.986816 19707 job_metrics_coordinator.cc:53] [worker_2]	0.014936
+I0209 21:33:30.986819 19707 job_metrics_coordinator.cc:53] [worker_3]	0.014935
+I0209 21:33:30.986820 19707 job_metrics_coordinator.cc:53] [worker_4]	0.014936
+I0209 21:33:30.986822 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:30.986824 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000069
+I0209 21:33:30.986827 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000069
+I0209 21:33:30.986829 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000069
+I0209 21:33:30.986831 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000069
+I0209 21:33:30.986834 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:30.986835 19707 job_metrics_coordinator.cc:65] [worker_1]	4332
+I0209 21:33:30.986837 19707 job_metrics_coordinator.cc:65] [worker_2]	5971
+I0209 21:33:30.986840 19707 job_metrics_coordinator.cc:65] [worker_3]	6170
+I0209 21:33:30.986841 19707 job_metrics_coordinator.cc:65] [worker_4]	3781
+I0209 21:33:30.986843 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:30.986845 19707 job_metrics_coordinator.cc:71] [worker_1]	51984
+I0209 21:33:30.986846 19707 job_metrics_coordinator.cc:71] [worker_2]	71652
+I0209 21:33:30.986850 19707 job_metrics_coordinator.cc:71] [worker_3]	74040
+I0209 21:33:30.986850 19707 job_metrics_coordinator.cc:71] [worker_4]	45372
+I0209 21:33:30.986852 19707 job_metrics_coordinator.cc:50] ======================= superstep 5
+I0209 21:33:30.986855 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:30.986856 19707 job_metrics_coordinator.cc:53] [worker_1]	0.009905
+I0209 21:33:30.986858 19707 job_metrics_coordinator.cc:53] [worker_2]	0.009904
+I0209 21:33:30.986861 19707 job_metrics_coordinator.cc:53] [worker_3]	0.009905
+I0209 21:33:30.986863 19707 job_metrics_coordinator.cc:53] [worker_4]	0.009905
+I0209 21:33:30.986865 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:30.986867 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000067
+I0209 21:33:30.986870 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000068
+I0209 21:33:30.986871 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000068
+I0209 21:33:30.986874 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000068
+I0209 21:33:30.986876 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:30.986878 19707 job_metrics_coordinator.cc:65] [worker_1]	4332
+I0209 21:33:30.986884 19707 job_metrics_coordinator.cc:65] [worker_2]	5971
+I0209 21:33:30.986886 19707 job_metrics_coordinator.cc:65] [worker_3]	6170
+I0209 21:33:30.986888 19707 job_metrics_coordinator.cc:65] [worker_4]	3781
+I0209 21:33:30.986891 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:30.986892 19707 job_metrics_coordinator.cc:71] [worker_1]	51984
+I0209 21:33:30.986894 19707 job_metrics_coordinator.cc:71] [worker_2]	71652
+I0209 21:33:30.986896 19707 job_metrics_coordinator.cc:71] [worker_3]	74040
+I0209 21:33:30.986898 19707 job_metrics_coordinator.cc:71] [worker_4]	45372
+I0209 21:33:30.986899 19707 job_metrics_coordinator.cc:50] ======================= superstep 6
+I0209 21:33:30.986902 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:30.986903 19707 job_metrics_coordinator.cc:53] [worker_1]	0.009973
+I0209 21:33:30.986907 19707 job_metrics_coordinator.cc:53] [worker_2]	0.009973
+I0209 21:33:30.986908 19707 job_metrics_coordinator.cc:53] [worker_3]	0.009973
+I0209 21:33:30.986910 19707 job_metrics_coordinator.cc:53] [worker_4]	0.009972
+I0209 21:33:30.986912 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:30.986914 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000082
+I0209 21:33:30.986917 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000082
+I0209 21:33:30.986919 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000082
+I0209 21:33:30.986922 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000083
+I0209 21:33:30.986923 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:30.986925 19707 job_metrics_coordinator.cc:65] [worker_1]	4332
+I0209 21:33:30.986927 19707 job_metrics_coordinator.cc:65] [worker_2]	5971
+I0209 21:33:30.986929 19707 job_metrics_coordinator.cc:65] [worker_3]	6170
+I0209 21:33:30.986932 19707 job_metrics_coordinator.cc:65] [worker_4]	3781
+I0209 21:33:30.986933 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:30.986935 19707 job_metrics_coordinator.cc:71] [worker_1]	51984
+I0209 21:33:30.986937 19707 job_metrics_coordinator.cc:71] [worker_2]	71652
+I0209 21:33:30.986939 19707 job_metrics_coordinator.cc:71] [worker_3]	74040
+I0209 21:33:30.986941 19707 job_metrics_coordinator.cc:71] [worker_4]	45372
+I0209 21:33:30.986943 19707 job_metrics_coordinator.cc:50] ======================= superstep 7
+I0209 21:33:30.986945 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:30.986946 19707 job_metrics_coordinator.cc:53] [worker_1]	0.013179
+I0209 21:33:30.986949 19707 job_metrics_coordinator.cc:53] [worker_2]	0.013180
+I0209 21:33:30.986951 19707 job_metrics_coordinator.cc:53] [worker_3]	0.013180
+I0209 21:33:30.986953 19707 job_metrics_coordinator.cc:53] [worker_4]	0.013180
+I0209 21:33:30.986955 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:30.986958 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000048
+I0209 21:33:30.986960 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000049
+I0209 21:33:30.986963 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000049
+I0209 21:33:30.986964 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000049
+I0209 21:33:30.986966 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:30.986968 19707 job_metrics_coordinator.cc:65] [worker_1]	0
+I0209 21:33:30.986970 19707 job_metrics_coordinator.cc:65] [worker_2]	5971
+I0209 21:33:30.986973 19707 job_metrics_coordinator.cc:65] [worker_3]	0
+I0209 21:33:30.986974 19707 job_metrics_coordinator.cc:65] [worker_4]	0
+I0209 21:33:30.986976 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:30.986979 19707 job_metrics_coordinator.cc:71] [worker_1]	0
+I0209 21:33:30.986980 19707 job_metrics_coordinator.cc:71] [worker_2]	71652
+I0209 21:33:30.986982 19707 job_metrics_coordinator.cc:71] [worker_3]	0
+I0209 21:33:30.986984 19707 job_metrics_coordinator.cc:71] [worker_4]	0
+I0209 21:33:30.986986 19707 job_metrics_coordinator.cc:50] ======================= superstep 8
+I0209 21:33:30.986989 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:30.986994 19707 job_metrics_coordinator.cc:53] [worker_1]	0.008675
+I0209 21:33:30.986999 19707 job_metrics_coordinator.cc:53] [worker_2]	0.008674
+I0209 21:33:30.987000 19707 job_metrics_coordinator.cc:53] [worker_3]	0.008674
+I0209 21:33:30.987002 19707 job_metrics_coordinator.cc:53] [worker_4]	0.008675
+I0209 21:33:30.987004 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:30.987006 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000031
+I0209 21:33:30.987010 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000030
+I0209 21:33:30.987011 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000031
+I0209 21:33:30.987013 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000031
+I0209 21:33:30.987015 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:30.987017 19707 job_metrics_coordinator.cc:65] [worker_1]	0
+I0209 21:33:30.987020 19707 job_metrics_coordinator.cc:65] [worker_2]	0
+I0209 21:33:30.987021 19707 job_metrics_coordinator.cc:65] [worker_3]	0
+I0209 21:33:30.987023 19707 job_metrics_coordinator.cc:65] [worker_4]	0
+I0209 21:33:30.987025 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:30.987027 19707 job_metrics_coordinator.cc:71] [worker_1]	0
+I0209 21:33:30.987030 19707 job_metrics_coordinator.cc:71] [worker_2]	0
+I0209 21:33:30.987031 19707 job_metrics_coordinator.cc:71] [worker_3]	0
+I0209 21:33:30.987033 19707 job_metrics_coordinator.cc:71] [worker_4]	0
+I0209 21:33:30.987040 19707 dispatcher.cc:92] Get a gql: unloadapp(sssp)
+I0209 21:33:30.987061 19707 coordinator.cc:265] unloaded application: sssp
+I0209 21:33:30.987066 19707 dispatcher.cc:92] Get a gql: unloadapp(bfs)
+I0209 21:33:30.987076 19707 coordinator.cc:265] unloaded application: bfs
+I0209 21:33:30.987080 19707 dispatcher.cc:92] Get a gql: unloadapp(pr)
+I0209 21:33:30.987089 19707 coordinator.cc:265] unloaded application: pr
+I0209 21:33:30.987093 19707 dispatcher.cc:92] Get a gql: unloadgraph(twitter)
+I0209 21:33:30.987104 19707 coordinator.cc:270] unload graph
+I0209 21:33:30.987107 19707 dispatcher.cc:92] Get a gql: p2p = loadgraph("grape-test/p2p-31.yaml")
+I0209 21:33:31.205389 19707 dispatcher.cc:92] Get a gql: wcc = loadapp("grape-test/wcc.yaml")
+I0209 21:33:31.205749 19707 coordinator.cc:254] loaded application: wcc
+I0209 21:33:31.205757 19707 dispatcher.cc:92] Get a gql: wcc.query()
+I0209 21:33:31.206138 19707 coordinator.cc:83] [coordinator]: Job_1518183211206132.000000
+I0209 21:33:31.206142 19707 coordinator.cc:84] [coordinator]: PEval begin...
+I0209 21:33:31.220649 19707 coordinator.cc:88] [coordinator]: PEval end...
+I0209 21:33:31.220736 19707 coordinator.cc:99] [coordinator]: IncEval-2 begin...
+I0209 21:33:31.221112 19707 coordinator.cc:103] [coordinator]: IncEval-2 end...
+I0209 21:33:31.221141 19707 coordinator.cc:99] [coordinator]: IncEval-3 begin...
+I0209 21:33:31.221331 19707 coordinator.cc:103] [coordinator]: IncEval-3 end...
+I0209 21:33:31.221344 19707 coordinator.cc:99] [coordinator]: IncEval-4 begin...
+I0209 21:33:31.221465 19707 coordinator.cc:103] [coordinator]: IncEval-4 end...
+I0209 21:33:31.234257 19707 job_metrics_coordinator.cc:35] -------------------------------------------------
+I0209 21:33:31.234272 19707 job_metrics_coordinator.cc:36] grape_uptime: 1.90156s
+I0209 21:33:31.234279 19707 job_metrics_coordinator.cc:38] load_graph_time: 1s
+I0209 21:33:31.234282 19707 job_metrics_coordinator.cc:39] app_name: wcc
+I0209 21:33:31.234284 19707 job_metrics_coordinator.cc:40] query_info: 
+I0209 21:33:31.234285 19707 job_metrics_coordinator.cc:41] whole-query-time: 0.015342s
+I0209 21:33:31.234289 19707 job_metrics_coordinator.cc:42] -part-eval-time: 0.015173s
+I0209 21:33:31.234292 19707 job_metrics_coordinator.cc:43] -part-comm-time: 0.000103951s
+I0209 21:33:31.234294 19707 job_metrics_coordinator.cc:44] msg-count: 46077
+I0209 21:33:31.234297 19707 job_metrics_coordinator.cc:45] msg-bytes: 552924
+I0209 21:33:31.234298 19707 job_metrics_coordinator.cc:46] rounds: 4
+I0209 21:33:31.234300 19707 job_metrics_coordinator.cc:47] -------------------------------------------------
+I0209 21:33:31.234318 19707 job_metrics_coordinator.cc:50] ======================= superstep 0
+I0209 21:33:31.234320 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:31.234323 19707 job_metrics_coordinator.cc:53] [worker_1]	0.013957
+I0209 21:33:31.234325 19707 job_metrics_coordinator.cc:53] [worker_2]	0.013751
+I0209 21:33:31.234328 19707 job_metrics_coordinator.cc:53] [worker_3]	0.013576
+I0209 21:33:31.234329 19707 job_metrics_coordinator.cc:53] [worker_4]	0.013110
+I0209 21:33:31.234333 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:31.234334 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000094
+I0209 21:33:31.234336 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000094
+I0209 21:33:31.234338 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000094
+I0209 21:33:31.234341 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000093
+I0209 21:33:31.234344 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:31.234345 19707 job_metrics_coordinator.cc:65] [worker_1]	5626
+I0209 21:33:31.234347 19707 job_metrics_coordinator.cc:65] [worker_2]	6739
+I0209 21:33:31.234350 19707 job_metrics_coordinator.cc:65] [worker_3]	8368
+I0209 21:33:31.234351 19707 job_metrics_coordinator.cc:65] [worker_4]	8482
+I0209 21:33:31.234354 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:31.234355 19707 job_metrics_coordinator.cc:71] [worker_1]	67512
+I0209 21:33:31.234359 19707 job_metrics_coordinator.cc:71] [worker_2]	80868
+I0209 21:33:31.234359 19707 job_metrics_coordinator.cc:71] [worker_3]	100416
+I0209 21:33:31.234361 19707 job_metrics_coordinator.cc:71] [worker_4]	101784
+I0209 21:33:31.234364 19707 job_metrics_coordinator.cc:50] ======================= superstep 1
+I0209 21:33:31.234365 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:31.234367 19707 job_metrics_coordinator.cc:53] [worker_1]	0.000377
+I0209 21:33:31.234369 19707 job_metrics_coordinator.cc:53] [worker_2]	0.000377
+I0209 21:33:31.234371 19707 job_metrics_coordinator.cc:53] [worker_3]	0.000377
+I0209 21:33:31.234375 19707 job_metrics_coordinator.cc:53] [worker_4]	0.000377
+I0209 21:33:31.234376 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:31.234378 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000030
+I0209 21:33:31.234380 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000030
+I0209 21:33:31.234383 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000030
+I0209 21:33:31.234385 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000030
+I0209 21:33:31.234387 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:31.234390 19707 job_metrics_coordinator.cc:65] [worker_1]	0
+I0209 21:33:31.234391 19707 job_metrics_coordinator.cc:65] [worker_2]	6
+I0209 21:33:31.234393 19707 job_metrics_coordinator.cc:65] [worker_3]	8368
+I0209 21:33:31.234395 19707 job_metrics_coordinator.cc:65] [worker_4]	8482
+I0209 21:33:31.234397 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:31.234400 19707 job_metrics_coordinator.cc:71] [worker_1]	0
+I0209 21:33:31.234401 19707 job_metrics_coordinator.cc:71] [worker_2]	72
+I0209 21:33:31.234403 19707 job_metrics_coordinator.cc:71] [worker_3]	100416
+I0209 21:33:31.234405 19707 job_metrics_coordinator.cc:71] [worker_4]	101784
+I0209 21:33:31.234407 19707 job_metrics_coordinator.cc:50] ======================= superstep 2
+I0209 21:33:31.234410 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:31.234411 19707 job_metrics_coordinator.cc:53] [worker_1]	0.000190
+I0209 21:33:31.234413 19707 job_metrics_coordinator.cc:53] [worker_2]	0.000191
+I0209 21:33:31.234416 19707 job_metrics_coordinator.cc:53] [worker_3]	0.000191
+I0209 21:33:31.234417 19707 job_metrics_coordinator.cc:53] [worker_4]	0.000190
+I0209 21:33:31.234421 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:31.234421 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000012
+I0209 21:33:31.234424 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000012
+I0209 21:33:31.234431 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000012
+I0209 21:33:31.234433 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000012
+I0209 21:33:31.234436 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:31.234438 19707 job_metrics_coordinator.cc:65] [worker_1]	0
+I0209 21:33:31.234441 19707 job_metrics_coordinator.cc:65] [worker_2]	6
+I0209 21:33:31.234442 19707 job_metrics_coordinator.cc:65] [worker_3]	0
+I0209 21:33:31.234444 19707 job_metrics_coordinator.cc:65] [worker_4]	0
+I0209 21:33:31.234447 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:31.234448 19707 job_metrics_coordinator.cc:71] [worker_1]	0
+I0209 21:33:31.234450 19707 job_metrics_coordinator.cc:71] [worker_2]	72
+I0209 21:33:31.234452 19707 job_metrics_coordinator.cc:71] [worker_3]	0
+I0209 21:33:31.234454 19707 job_metrics_coordinator.cc:71] [worker_4]	0
+I0209 21:33:31.234457 19707 job_metrics_coordinator.cc:50] ======================= superstep 3
+I0209 21:33:31.234457 19707 job_metrics_coordinator.cc:51] -------eval-time-------
+I0209 21:33:31.234459 19707 job_metrics_coordinator.cc:53] [worker_1]	0.000121
+I0209 21:33:31.234462 19707 job_metrics_coordinator.cc:53] [worker_2]	0.000121
+I0209 21:33:31.234464 19707 job_metrics_coordinator.cc:53] [worker_3]	0.000121
+I0209 21:33:31.234467 19707 job_metrics_coordinator.cc:53] [worker_4]	0.000121
+I0209 21:33:31.234468 19707 job_metrics_coordinator.cc:57] -------comm-time-------
+I0209 21:33:31.234470 19707 job_metrics_coordinator.cc:59] [worker_1]	0.000010
+I0209 21:33:31.234473 19707 job_metrics_coordinator.cc:59] [worker_2]	0.000010
+I0209 21:33:31.234475 19707 job_metrics_coordinator.cc:59] [worker_3]	0.000011
+I0209 21:33:31.234477 19707 job_metrics_coordinator.cc:59] [worker_4]	0.000010
+I0209 21:33:31.234480 19707 job_metrics_coordinator.cc:63] -----message-count-----
+I0209 21:33:31.234482 19707 job_metrics_coordinator.cc:65] [worker_1]	0
+I0209 21:33:31.234483 19707 job_metrics_coordinator.cc:65] [worker_2]	0
+I0209 21:33:31.234485 19707 job_metrics_coordinator.cc:65] [worker_3]	0
+I0209 21:33:31.234488 19707 job_metrics_coordinator.cc:65] [worker_4]	0
+I0209 21:33:31.234489 19707 job_metrics_coordinator.cc:69] -----message-bytes-----
+I0209 21:33:31.234491 19707 job_metrics_coordinator.cc:71] [worker_1]	0
+I0209 21:33:31.234493 19707 job_metrics_coordinator.cc:71] [worker_2]	0
+I0209 21:33:31.234495 19707 job_metrics_coordinator.cc:71] [worker_3]	0
+I0209 21:33:31.234498 19707 job_metrics_coordinator.cc:71] [worker_4]	0
+I0209 21:33:31.234503 19707 dispatcher.cc:92] Get a gql: unloadapp(wcc)
+I0209 21:33:31.234522 19707 coordinator.cc:265] unloaded application: wcc
+I0209 21:33:31.234526 19707 dispatcher.cc:92] Get a gql: unloadgraph(p2p)
+I0209 21:33:31.234537 19707 coordinator.cc:270] unload graph
+I0209 21:33:31.234541 19707 dispatcher.cc:92] Get a gql: exit

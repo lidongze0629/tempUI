@@ -1,0 +1,442 @@
+<!--header-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>GRAPE Online</title>
+
+  <!-- Bootstrap -->
+  <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- NProgress -->
+  <link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
+  <!-- iCheck -->
+  <link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+  <!-- Custom Theme Style -->
+  <link href="/build/css/custom.css" rel="stylesheet">
+  <script>
+    var if_waiting = "<%=if_waiting%>"
+    if (if_waiting == 1) {
+      alert("There is a Job in queue , Waiting....")
+    }
+
+    function before_submit() {
+      var algorithm = document.getElementById("algo").value
+      var Reg = /^\d+$/
+      var size = 81306
+      var begin = 1
+      var cu_dataset = $("#dataset option:selected")
+      if (cu_dataset.text() == "Twitter") { //begin 1
+        size = 81306
+        begin = 1
+      } else if (cu_dataset.text() == "LiveJournal") { //begin 1
+        size = 4847571
+        begin = 1
+      } else if (cu_dataset.text() == "com-friendster") { //begin 0
+        size = 65608365
+        begin = 0
+      }
+      if (algorithm == "sssp") {
+        var query_value = document.getElementById("exampleInputPassword1").value
+        if (query_value == "") {
+          alert("Input is Null , Please input you query");
+          $("#exampleInputPassword1").focus()
+          return false;
+        } else if (query_value.match(Reg) == null) {
+          alert("Input Format Error , Please Input number")
+          $("#exampleInputPassword1").focus()
+          return false;
+        } else if ((query_value < begin) || (query_value > dataset_size)) {
+          alert("Input out of bound , See Right Console")
+          $("#exampleInputPassword1").focus()
+          return false;
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="nav-md">
+  <div class="container body">
+    <div class="main_container">
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="index.html" class="site_title"><span>GRAPE</span></a>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+              <ul class="nav side-menu">
+                <li><a href="grape-running?if_waiting=0"><i class="fa fa-home"></i> Processing</span></a></li>
+                <li><a href="grape-plug"><i class="fa fa-plug"></i> Plug</span></a></li>
+                <!-- <li><a href="grape-running-communication"><i class="fa fa-home"></i>Running-communication</a></li> -->
+                <li><a href="grape-cluster"><i class="fa fa-server"></i>Clusters</a></li>
+                <li><a href="grape-queries"><i class="fa fa-home"></i>Queries</a></li>
+                <li><a href="grape-instances"><i class="fa fa-home"></i>Jobs</a></li>
+                <!-- <li><a href="grape-single-query"><i class="fa fa-line-chart"></i>Performance</a></li> -->
+              </ul>
+            </div>
+
+
+          </div>
+          <!-- /sidebar menu -->
+
+        </div>
+      </div>
+      <!--headerend-->
+      <!-- page content -->
+      <div class="right_col" role="main">
+        <div class="page-title">
+          <div class="title_left">
+            <h3>Parallelizing Sequential Graph Computations
+                            <!-- <small>a detail page for single job</small> -->
+                        </h3>
+          </div>
+        </div>
+        <!-- running head -->
+        <div class="row x_panel tile y_running_nav">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="y_proc_block">
+              <div class="y_proc_block_center">
+                <!-- <div class="y_title">Processing</div> -->
+                <div class="y_proc_sec col-md-5 col-sm-5 col-xs-5">
+                  <div class="y_proc_bg">
+                    Plug
+                  </div>
+                </div>
+                <div class="y_proc_sec col-md-2 col-sm-2 col-xs-2">
+                  <div class="y_proc_bg">
+                    Play
+                  </div>
+                </div>
+                <div class="y_proc_sec col-md-5 col-sm-5 col-xs-5">
+                  <div class="y_proc_bg">
+                    Analytics
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+            <div class="y_proc_overlay">
+              <div class="y_proc_block_center y_proc_flow">
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                  <div class="y_flow_box y_flow_half active">
+                    <a href="#"><i class="fa fa-plug"></i>Plug Algorithm</a>
+                  </div>
+                  <div class="yarrows"></div>
+                  <div class="y_flow_box y_flow_half">
+                    <a href="#"><i class="fa fa-refresh"></i>Load Graph Data</a>
+                  </div>
+                  <div class="yarrows"></div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <div class="y_flow_box y_flow_cluster">
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+
+                  <div class="y_flow_box y_flow_half_r">
+                    <a href="JavaScript:void(0)" style="color:grey"><i class="fa fa-line-chart"></i>Performance</a>
+                  </div>
+                  <div class="yarrows r"></div>
+
+                  <div class="y_flow_box y_flow_half_r">
+                    <a href="JavaScript:void(0)" style="color:grey"><i class="fa fa-list"></i>Result</a>
+                  </div>
+                  <div class="yarrows r"></div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="row y_running_expend">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>Query Input
+                                    <small></small>
+                                </h2>
+                <ul class="nav navbar-right panel_toolbox">
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                  <li><a class="close-link"><i class="fa fa-close"></i></a>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <form role="form" name="before_start" action="/tmp" method="GET" onsubmit="return before_submit()">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Algorithm</label>
+                    <select class="form-control" name="algo" id="algo">
+                                        <option value="sssp">Single Sourced Shortest Path</option>
+                                        <option value="cc">Connected Component</option>
+                                        <option value="sim">Simulation</option>
+                                        <% for (var i = 0; i < ugcalgosname.length; i++) { %>
+                                        <option value="<%= ugcalgosname[i] %>"><%= ugcalgosname[i] %></option>
+                                        <% } %>
+                                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Datasets</label>
+                    <select class="form-control" name="dataset" id="dataset">
+                                        <option value="twitter">Twitter</option>
+                                        <option value="livejournal">LiveJournal</option>
+                                        <option value="com-friendster">com-friendster</option>
+                                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Worker Number</label>
+                    <select class="form-control" name="workerNum" id="workerNum">
+                                        <option>4</option>
+                                        <option>8</option>
+                                        <option>16</option>
+                                        <option>32</option>
+                                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Query Input</label>
+                    <input type="text" class="form-control" name="query_input" id="exampleInputPassword1" placeholder="Input query" name="query">
+                    <!-- TODO: conditional display -->
+                    <!-- sssp query: text-input -->
+                    <!-- cc: hide this input -->
+                    <!-- sim and vf2: pattern selection -->
+                  </div>
+                  <!-- @jzxy, use hidden element to pass extra parameters -->
+                  <div id="QueryPattern" style="display: none">
+                    <label class="col-sm-3 control-label" for="inputPassword3">
+                                        <button id="sim-pattern-btn" class="btn btn-default" data-target="#sim-modal" data-toggle="modal" type="button">
+                                            Select Pattern
+                                        </button>
+                                        </label>
+                    <input id="pattern_name" name="pattern_name" type="hidden" />
+                    <div class="col-sm-9">
+                      <div id="selected_pattern" style="display: none">
+                        <img src="/images/pattern-1.png" />
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-success pull-right">Start</button>
+                  <button type="reset" class="btn btn-default pull-right">Reset</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- /running head -->
+          <!-- Modal-->
+          <div aria-labelledby="myModalLabel" class="modal fade" id="sim-modal" role="dialog" tabindex="-1">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+                                    <span aria-hidden="true">
+                                        ×
+                                    </span>
+                                </button>
+                  <h4 class="modal-title" id="myModalLabel">
+                                        Select a pattern for Simulation
+                                    </h4>
+                </div>
+                <div class="modal-body">
+                  <div class="apattern">
+                    <img src="/images/sim-pattern/sim1.jpg" />
+                    <button class="btn btn-default sim-select" data-dismiss="modal" name="sim1" type="button">
+                                        Select
+                                    </button>
+                  </div>
+                  <div class="apattern">
+                    <img src="/images/sim-pattern/sim2.jpg" />
+                    <button class="btn btn-default sim-select" data-dismiss="modal" name="sim2" type="button">
+                                        Select
+                                    </button>
+                  </div>
+                  <div class="apattern">
+                    <img src="/images/sim-pattern/sim3.jpg" />
+                    <button class="btn btn-default sim-select" data-dismiss="modal" name="sim3" type="button">
+                                        Select
+                                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- </div> -->
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="x_panel y_console">
+              <div class="x_title">
+                <h2>Cluster Console
+                                </h2>
+                <ul class="nav navbar-right panel_toolbox">
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                  <li><a class="close-link"><i class="fa fa-close"></i></a>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content" id="console_content">
+                Now the cluster is idle. <br/> Waiting for query... <br/>
+              </div>
+            </div>
+          </div>
+          <!-- /running head -->
+          <!-- </div> -->
+        </div>
+      </div>
+      <!-- /page content -->
+      <!--footer-->
+      <!-- footer content -->
+      <footer>
+        <div class="pull-right">
+          <input type="button" id="kill_button" onclick="kill_worker()" style="BACKGROUND-IMAGE: url(../images/grape_logo.png);width:25px;height:25px;border: none;"></input>
+          Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+        </div>
+        <div class="clearfix"></div>
+      </footer>
+      <!-- /footer content -->
+    </div>
+  </div>
+  <!-- jQuery -->
+  <script src="/vendors/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- FastClick -->
+  <script src="/vendors/fastclick/lib/fastclick.js"></script>
+  <!-- NProgress -->
+  <script src="/vendors/nprogress/nprogress.js"></script>
+  <!-- Chart.js -->
+  <script src="/vendors/Chart.js/dist/Chart.min.js"></script>
+  <!-- gauge.js -->
+  <script src="/vendors/gauge.js/dist/gauge.min.js"></script>
+  <!-- bootstrap-progressbar -->
+  <script src="/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+  <!-- iCheck -->
+  <script src="/vendors/iCheck/icheck.min.js"></script>
+  <!-- Skycons -->
+  <script src="/vendors/skycons/skycons.js"></script>
+  <!-- Flot -->
+  <script src="/vendors/Flot/jquery.flot.js"></script>
+  <script src="/vendors/Flot/jquery.flot.pie.js"></script>
+  <script src="/vendors/Flot/jquery.flot.time.js"></script>
+  <script src="/vendors/Flot/jquery.flot.stack.js"></script>
+  <script src="/vendors/Flot/jquery.flot.resize.js"></script>
+  <!-- Flot plugins -->
+  <script src="/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+  <script src="/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+  <script src="/vendors/flot.curvedlines/curvedLines.js"></script>
+  <!-- DateJS -->
+  <script src="/vendors/DateJS/build/date.js"></script>
+  <!-- JQVMap -->
+  <script src="/vendors/jqvmap/dist/jquery.vmap.js"></script>
+  <script src="/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+  <script src="/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+  <!-- bootstrap-daterangepicker -->
+  <script src="/vendors/moment/min/moment.min.js"></script>
+  <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+  <!-- Custom Theme Scripts -->
+  <script src="/build/js/custom.min.js"></script>
+  <script>
+    function kill_worker() {
+      $.post('/kill_worker', function(data) {});
+    }
+    $('#sim-modal').on('hidden.bs.modal', function(e) {
+      $("#selected_pattern").show();
+    })
+
+    $(".sim-select").click(function() {
+      console.log("clicked:" + $(this).attr("name"));
+      $("#pattern_name").attr("value", $(this).attr("name"));
+      $pattern_source = "/images/sim-pattern/" + $(this).attr("name") + ".jpg";
+      $("#selected_pattern img").attr("src", $pattern_source)
+    });
+
+
+    $("#algo").bind("change", function() {
+      if ($(this).val() == "cc") {
+        $('#QueryPattern').toggle(false);
+        $('#exampleInputPassword1').toggle(false);
+      } else
+      if ($(this).val() == "sssp") {
+        $('#QueryPattern').toggle(false);
+        $('#exampleInputPassword1').toggle(true);
+      } else
+      if ($(this).val() == "sim") {
+        $('#QueryPattern').toggle(true);
+        $('#exampleInputPassword1').toggle(false);
+        $("#sim-pattern-btn").show();
+      }
+    });
+
+
+    var algo = $("#algo option:selected");
+    var dataset = $("#dataset option:selected")
+    var workerNum = $("#workerNum option:selected")
+    $("#console_content").html("Current Choice : <br /> Algorithm : " + algo.text() + "<br /> dataset : " + dataset.text() + "<br />  worker Number : " + workerNum.text())
+    $("#console_content").append("<br /> Input : Null");
+    var dataset_size = 81306 //default for twitter
+    var begin = 1
+
+    $("#algo").change(function() {
+      document.getElementById("exampleInputPassword1").value = ""
+      algo = $("#algo option:selected");
+      $("#console_content").html("Current Choice : <br /> Algorithm : " + algo.text() + "<br /> dataset : " + dataset.text() + "<br />  worker Number : " + workerNum.text())
+      $("#console_content").append("<br /> Input : Null");
+    });
+    $("#dataset").change(function() {
+      document.getElementById("exampleInputPassword1").value = ""
+      dataset = $("#dataset option:selected")
+      $("#console_content").html("Current Choice : <br /> Algorithm : " + algo.text() + "<br /> dataset : " + dataset.text() + "<br />  worker Number : " + workerNum.text())
+      $("#console_content").append("<br /> Input : Null");
+      if (dataset.text() == "Twitter") { //begin 1
+        dataset_size = 81306
+        begin = 1
+      } else if (dataset.text() == "LiveJournal") { //begin 1
+        dataset_size = 4847571
+        begin = 1
+      } else if (dataset.text() == "com-friendster") { //begin 0
+        dataset_size = 65608365
+        begin = 0
+      }
+    });
+    $("#workerNum").change(function() {
+      var query_content = document.getElementById("exampleInputPassword1").value;
+      workerNum = $("#workerNum option:selected")
+      $("#console_content").html("Current Choice : <br /> Algorithm : " + algo.text() + "<br /> dataset : " + dataset.text() + "<br />  worker Number : " + workerNum.text())
+      $("#console_content").append("<br /> Input : " + query_content);
+    });
+    $("#exampleInputPassword1").change(function() {
+      var query_content = document.getElementById("exampleInputPassword1").value;
+      var Reg = /^\d+$/
+      if (query_content.match(Reg) == null) {
+        $("#console_content").html("Current Choice : <br /> Algorithm : " + algo.text() + "<br /> dataset : " + dataset.text() + "<br />  worker Number : " + workerNum.text())
+        $("#console_content").append("<br /> Input : Currently Query Input : Error input format ")
+      } else {
+        if ((query_content >= begin) && (query_content <= dataset_size)) {
+          $("#console_content").html("Current Choice : <br /> Algorithm : " + algo.text() + "<br /> dataset : " + dataset.text() + "<br />  worker Number : " + workerNum.text())
+          $("#console_content").append("<br /> Input : " + query_content);
+        } else {
+          $("#console_content").html("Current Choice : <br /> Algorithm : " + algo.text() + "<br /> dataset : " + dataset.text() + "<br />  worker Number : " + workerNum.text())
+          $("#console_content").append("<br/> The Source you choice is out of bound , you should choice <br> [1-81306] for Twitter <br> [1-4847571] for LiveJournal<br> [0-65608365] for com-friendster")
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
+<!--footerend

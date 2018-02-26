@@ -1,0 +1,168 @@
+<!--header-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>GRAPE Online</title>
+
+  <!-- Bootstrap -->
+  <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- NProgress -->
+  <link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
+  <!-- iCheck -->
+  <link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+  <!-- Custom Theme Style -->
+  <link href="/build/css/custom.css" rel="stylesheet">
+</head>
+
+<body class="nav-md">
+  <div class="container body">
+    <div class="main_container">
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="index.html" class="site_title"><span>GRAPE</span></a>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+              <ul class="nav side-menu">
+                <li><a href="grape-running?if_waiting=0"><i class="fa fa-home"></i> Processing</span></a></li>
+                <li><a href="grape-plug"><i class="fa fa-plug"></i> Plug</span></a></li>
+                <!-- <li><a href="grape-running-communication"><i class="fa fa-home"></i>Running-communication</a></li> -->
+                <li><a href="grape-cluster"><i class="fa fa-server"></i>Clusters</a></li>
+                <li><a href="grape-queries"><i class="fa fa-home"></i>Queries</a></li>
+                <li><a href="grape-instances"><i class="fa fa-home"></i>Jobs</a></li>
+                <!-- <li><a href="grape-single-query"><i class="fa fa-line-chart"></i>Performance</a></li> -->
+              </ul>
+            </div>
+
+
+          </div>
+          <!-- /sidebar menu -->
+
+        </div>
+      </div>
+      <!--headerend-->
+
+      <!-- page content -->
+      <div class="right_col" role="main">
+        <div class="">
+          <div class="page-title">
+            <div class="title_left">
+              <h3>Result
+                                <small>for Job-ID:<%=sessionID%> </small>
+                            </h3>
+            </div>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="x_panel">
+                <div class="x_title">
+                  <% if(algo == "sssp") { %>
+                    <h2>for sssp, results are formated as [vid -> dist] from the source.</h2>
+                    <% }else if(algo == "cc") {%>
+                      <h2>for cc, results are formated as [VID in ConnectedID] from all points.</h2>
+                      <%}else if(algo == "sim"){%>
+                        <h2>for sim, results are formated as [VID Macth Point in Pattern] .</h2>
+                        <%}else{%>
+                          <h2>From your plug in algo</h2>
+                          <%}%>
+                            <ul class="nav navbar-right panel_toolbox">
+                              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                              </li>
+                              <li><a class="close-link"><i class="fa fa-close"></i></a>
+                              </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <% if((algo == "sssp")||(algo == "cc")||(algo == "sim")) { %>
+                    <table class="table table-striped projects">
+                      <thead>
+                        <tr>
+                          <th style="width: 30%">Index</th>
+                          <th style="width: 70%">Result</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% if(result_length) { %>
+                          <% for (var i = 0; i < result_length ; i++) { %>
+                            <tr>
+                              <td>
+                                <%= vid[i] %>
+                              </td>
+                              <td>
+                                <%=dist[i]%>
+                              </td>
+                            </tr>
+                            <% } %>
+                              <% } %>
+                      </tbody>
+                    </table>
+                    <%}else{%>
+                      <pre><%= vid[0] %></pre>
+                      <% } %>
+
+                        <div id="lidongze">
+                        </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <!-- /page content -->
+
+      <!-- footer content -->
+      <footer>
+        <div class="pull-right">
+          Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+        </div>
+        <div class="clearfix"></div>
+      </footer>
+      <!-- /footer content -->
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="/vendors/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- FastClick -->
+  <script src="/vendors/fastclick/lib/fastclick.js"></script>
+  <!-- NProgress -->
+  <script src="/vendors/nprogress/nprogress.js"></script>
+
+  <!-- Custom Theme Scripts -->
+  <script src="/build/js/custom.min.js"></script>
+  <script type="text/javascript">
+    function window_onload() {
+      if (location.href.indexOf('#reloaded') == -1) {
+        location.href = location.href + "#reloaded"
+        location.reload()
+      }
+    }
+    window_onload()
+  </script>
+</body>
+
+</html>

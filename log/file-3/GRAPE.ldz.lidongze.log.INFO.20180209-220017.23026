@@ -1,0 +1,28 @@
+Log file created at: 2018/02/09 22:00:17
+Running on machine: ldz
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0209 22:00:17.899386 23026 grape.cc:17] Welcome to GRAPE!
+I0209 22:00:17.904222 23026 io_factory.h:38] Use default file location(local) to open: ./grape-test/twitter.r
+I0209 22:00:17.945643 23026 io_factory.h:38] Use default file location(local) to open: ./grape-test/twitter.e
+I0209 22:00:18.813987 23026 io_factory.h:38] Use default file location(local) to open: ./grape-test/twitter.v
+I0209 22:00:18.908172 23026 sync_worker.cc:437] [worker2] finished loading graphs...
+I0209 22:00:19.436870 23026 sssp.h:38] Create a instance of SSSP.
+I0209 22:00:19.437258 23026 bfs.h:38] Create a instance of BFS.
+I0209 22:00:19.437623 23026 pagerank.h:38] Create a instace of Pagerank.
+I0209 22:00:19.438525 23026 sync_worker.cc:44] 3 - > 2
+I0209 22:00:19.535223 23083 sssp.cc:205] [frag2] partial result output: ./sssp_4_frag_2_20180209_100019
+I0209 22:00:19.541398 23026 sync_worker.cc:44] 3 - > 2
+I0209 22:00:19.635001 23123 sssp.cc:205] [frag2] partial result output: ./sssp_14_frag_2_20180209_100019
+I0209 22:00:19.637075 23026 sync_worker.cc:44] 3 - > 2
+I0209 22:00:19.748046 23167 sssp.cc:205] [frag2] partial result output: ./sssp_4_frag_2_20180209_100019
+I0209 22:00:19.750231 23026 sync_worker.cc:44] 3 - > 2
+I0209 22:00:19.796059 23189 bfs.cc:169] [frag2] partial result output: ./bfs_1-3_frag_2_20180209_100019
+I0209 22:00:19.802551 23026 sync_worker.cc:44] 3 - > 2
+I0209 22:00:19.968641 23244 pagerank.cc:182] [frag2] partial result output: ./pagerank_frag_2_20180209_100019
+I0209 22:00:19.980293 23026 io_factory.h:38] Use default file location(local) to open: ./grape-test/p2p-31.r4
+I0209 22:00:20.004650 23026 io_factory.h:38] Use default file location(local) to open: ./grape-test/p2p-31.e
+I0209 22:00:20.148020 23026 io_factory.h:38] Use default file location(local) to open: ./grape-test/p2p-31.v
+I0209 22:00:20.195181 23026 sync_worker.cc:437] [worker2] finished loading graphs...
+I0209 22:00:20.196100 23026 wcc.h:38] Create a instace of WCC.
+I0209 22:00:20.196169 23026 sync_worker.cc:44] 3 - > 2
+I0209 22:00:20.220186 23268 wcc.cc:235] [frag2] partial result output: ./wcc_frag_2_20180209_100020

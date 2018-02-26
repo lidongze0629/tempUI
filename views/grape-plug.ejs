@@ -1,0 +1,436 @@
+<!--header-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>GRAPE Online</title>
+
+  <!-- Bootstrap -->
+  <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- NProgress -->
+  <link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
+  <!-- iCheck -->
+  <link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+  <!-- Custom Theme Style -->
+  <link href="/build/css/custom.css" rel="stylesheet">
+</head>
+
+<body class="nav-md">
+  <div class="container body">
+    <div class="main_container">
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="index.html" class="site_title"><span>GRAPE</span></a>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+              <ul class="nav side-menu">
+                <li><a href="grape-running?if_waiting=0"><i class="fa fa-home"></i> Processing</span></a></li>
+                <li><a href="grape-plug"><i class="fa fa-plug"></i> Plug</span></a></li>
+                <!-- <li><a href="grape-running-communication"><i class="fa fa-home"></i>Running-communication</a></li> -->
+                <li><a href="grape-cluster"><i class="fa fa-server"></i>Clusters</a></li>
+                <li><a href="grape-queries"><i class="fa fa-home"></i>Queries</a></li>
+                <li><a href="grape-instances"><i class="fa fa-home"></i>Jobs</a></li>
+                <!-- <li><a href="grape-single-query"><i class="fa fa-line-chart"></i>Performance</a></li> -->
+              </ul>
+            </div>
+
+
+          </div>
+          <!-- /sidebar menu -->
+
+        </div>
+      </div>
+      <!--headerend-->
+
+      <!-- page content -->
+      <div class="right_col" role="main">
+        <div class="">
+          <div class="page-title">
+            <div class="title_left">
+              <h3>Plug
+                                <small>GRAPE parallelizes plugged sequential algorithms</small>
+                            </h3>
+            </div>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="alert alert-danger head-error hidden" id="head-error" role="alert">
+                this site is currently under maintenance.
+              </div>
+              <div class="alert alert-success hidden" id="alert-seq-pass" role="alert">
+                <strong>
+                                        Seqential code passed grammer check!
+                                    </strong>
+              </div>
+              <div class="alert alert-success hidden" id="alert-par-pass" role="alert">
+                <strong>
+                                        Parallelized successfully! Please go to Play tab and run your plugged algorithm.
+                                    </strong>
+              </div>
+              <div class="alert alert-success hidden" id="alert-notice-pass" role="alert">
+                <strong>
+                                        We are compiling your code... Wait for several seconds.
+                                    </strong>
+              </div>
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>You can click and plug sequential
+                                        <a class="sssp-btn" href="#">
+                                            SSSP
+                                        </a> as example.
+                                    </h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+
+                  <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                    <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                      <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">PEval</a>
+                      </li>
+                      <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">IncEval</a>
+                      </li>
+                      <li role="presentation" class=""><a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Assemble</a>
+                      </li>
+                      <li role="presentation" class=""><a href="#tab_content4" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Message Preamble</a>
+                      </li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+                      <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+                        <p>Plug your seqential algorithm for partial evaluation here.</p>
+                        <div class="code-editor" id="ace-editor1"></div>
+                      </div>
+                      <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+                        <p>Plug your seqential algorithm for incremental evaluation here.</p>
+                        <div class="code-editor" id="ace-editor2"></div>
+                      </div>
+                      <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
+                        <p>Plug your seqential algorithm for assemble here.</p>
+                        <div class="code-editor" id="ace-editor3"></div>
+                      </div>
+                      <div role="tabpanel" class="tab-pane fade" id="tab_content4" aria-labelledby="profile-tab">
+                        <p>Configure messages preamble.</p>
+                        <form id="appendix_form" name="appendix_form">
+                          <div class="form-group">
+                            <label class="col-sm-2 control-label" for="messageType">
+                                                    msgType
+                                                </label>
+                            <div class="col-sm-4">
+                              <select class="form-control" id="var-type" name="var-type">
+                                                        <option value="-1">
+                                                            - Select -
+                                                        </option>
+                                                        <option value="int">
+                                                            Integer
+                                                        </option>
+                                                        <option value="bool">
+                                                            Boolean
+                                                        </option>
+                                                    </select>
+                            </div>
+                            <label class="col-sm-2 control-label" for="msgGenerate">
+                                                    msgGenerate
+                                                </label>
+                            <div class="col-sm-4">
+                              <select class="form-control" id="msg_when" name="msg_when">
+                                                        <option value="-1">
+                                                            - Select -
+                                                        </option>
+                                                        <option value="0">
+                                                            increases
+                                                        </option>
+                                                        <option value="1">
+                                                            decreases
+                                                        </option>
+                                                        <option value="2">
+                                                            toggled
+                                                        </option>
+                                                        <option value="3">
+                                                            assigned True
+                                                        </option>
+                                                        <option value="4">
+                                                            assigned False
+                                                        </option>
+                                                    </select>
+                            </div>
+                            <div class="clearfix"></div>
+                          </div>
+                          <div class="form-group">
+                            <label class="col-sm-2 control-label" for="msgDirection">
+                                                    msgDirection
+                                                </label>
+                            <div class="col-sm-4">
+                              <select class="form-control" id="msg_where" name="msg_where">
+                                                        <option value="-1">
+                                                            - Select -
+                                                        </option>
+                                                        <option value="0">
+                                                            all neighbours
+                                                        </option>
+                                                        <option value="1">
+                                                            only child neighbours
+                                                        </option>
+                                                        <option value="2">
+                                                            only parent neighbours
+                                                        </option>
+                                                    </select>
+                            </div>
+                            <label class="col-sm-2 control-label" for="msgAggregate">
+                                                    msgAggregate
+                                                </label>
+                            <div class="col-sm-4">
+                              <select class="form-control" id="msg_merge" name="msg_merge">
+                                                        <option value="-1">
+                                                            - Select -
+                                                        </option>
+                                                        <option value="0">
+                                                            max
+                                                        </option>
+                                                        <option value="1">
+                                                            min
+                                                        </option>
+                                                        <option value="2">
+                                                            average
+                                                        </option>
+                                                        <option value="3">
+                                                            sum
+                                                        </option>
+                                                        <option value="4">
+                                                            and
+                                                        </option>
+                                                        <option value="5">
+                                                            or
+                                                        </option>
+                                                        <option value="6">
+                                                            xor
+                                                        </option>
+                                                    </select>
+                            </div>
+                            <div class="clearfix"></div>
+                          </div>
+
+                          <div class="form-group">
+                            <label class="col-sm-2 control-label" for="msgDirection">
+                                                        Register your algorithm
+                                                    </label>
+                            <div class="col-sm-6">
+                              <input class="form-control" id="udf_algo_name" name="udf_algo_name" placeholder="your algorithm name" type="text">
+                              </input>
+                            </div>
+                            <div class="col-sm-4">
+                              <a class="btn btn-success submit-btn">Plug</a>
+                            </div>
+                            <div class="clearfix"></div>
+                          </div>
+
+
+
+                      </div>
+                      <input id="command" name="command" type="hidden" />
+                      <input id="peval_code" name="peval_code" type="hidden" />
+                      <input id="inceval_code" name="inceval_code" type="hidden" />
+                      <input id="assemble_code" name="assemble_code" type="hidden" />
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+  <!-- /page content -->
+
+  <!--footer-->
+  <!-- footer content -->
+  <footer>
+    <div class="pull-right">
+      Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+    </div>
+    <div class="clearfix"></div>
+  </footer>
+  <!-- /footer content -->
+  </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="/vendors/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- FastClick -->
+  <script src="/vendors/fastclick/lib/fastclick.js"></script>
+  <!-- NProgress -->
+  <script src="/vendors/nprogress/nprogress.js"></script>
+
+  <!-- Custom Theme Scripts -->
+  <script src="/build/js/custom.min.js"></script>
+
+  <script src="/vendors/ace/ace.js"></script>
+  <script type="text/javascript">
+    // init code editor
+    var pEvalPlaceholder = "\n\
+//Paste your code here.\n\
+void PEval(Fragment &fragment, MessageBuffer &messages) {\n\
+    ////======= Plugin your partial evaluation code in this section =======\n\
+}"
+    var incEvalPlaceholder = "//Paste your code here. \n\
+void IncEval(Fragment &fragment, MessageBuffer &messages) {\n\
+    ////======= Plugin your incremental code in this section ======= \n\
+}";
+    var assemblePlaceholder = "//Paste your code here.\n\
+void Assemble(vector<vector<dynamic>> &partial_results) {\n\
+    ////======= Plugin your assemble code in this section =======\n\
+}"
+
+    var editor1 = ace.edit("ace-editor1");
+    editor1.setTheme("ace/theme/solarized_dark");
+    editor1.session.setMode("ace/mode/c_cpp");
+    editor1.setValue(pEvalPlaceholder, 1);
+
+    var editor2 = ace.edit("ace-editor2");
+    editor2.setTheme("ace/theme/solarized_dark");
+    editor2.session.setMode("ace/mode/c_cpp");
+    editor2.setValue(incEvalPlaceholder, 1);
+
+    var editor3 = ace.edit("ace-editor3");
+    editor3.setTheme("ace/theme/solarized_dark");
+    editor3.session.setMode("ace/mode/c_cpp");
+    editor3.setValue(assemblePlaceholder, 1);
+
+    $('.sssp-btn').click(function(e) {
+      $.get("../demo_data/sample-input/sssp-pEval.cpp", function(data) {
+        editor1.setValue(data, 1);
+      }, 'text');
+      $.get("../demo_data/sample-input/sssp-incEval.cpp", function(data) {
+        editor2.setValue(data, 1);
+      }, 'text');
+      $.get("../demo_data/sample-input/sssp-assemble.cpp", function(data) {
+        editor3.setValue(data, 1);
+      }, 'text');
+      $('#var-type').val("int");
+      $('#msg_when').val("1");
+      $('#msg_where').val("1");
+      $('#msg_merge').val("1");
+      e.preventDefault();
+    });
+
+
+    editor1.getSession().on('change', function(e) {
+      $(".submit-btn").removeClass("disabled");
+    });
+    editor2.getSession().on('change', function(e) {
+      $(".submit-btn").removeClass("disabled");
+    });
+    editor3.getSession().on('change', function(e) {
+      $(".submit-btn").removeClass("disabled");
+    });
+
+
+    $(".submit-btn").click(function(e) {
+      if ($(".submit-btn").hasClass("disabled")) {
+        return;
+      }
+
+      if ($("#udf_algo_name").val() == "") {
+        $("#head-error").html("<strong>Please input your algorithm name</strong><br>");
+        $("#head-error").removeClass("hidden");
+        return;
+      }
+      if ($('#msg_when').val() == -1 || $("#msg_merge").val() == -1 || $("#var-type").val() == -1 || $("#msg_where").val() == -1) {
+        $("#head-error").html("<strong>Select your message setting.</strong><br>");
+        $("#head-error").removeClass("hidden");
+        return;
+      }
+      $("#head-error").addClass("hidden");
+      $(".submit-btn").addClass("disabled");
+      $algoname = "ugc-" + $("#udf-algo-name").val();
+      $("#peval_code").attr("value", editor1.session.getValue());
+      $("#inceval_code").attr("value", editor2.session.getValue());
+      $("#assemble_code").attr("value", editor3.session.getValue());
+
+      $("#alert-notice-pass").removeClass("hidden");
+
+      // shoe processing modal
+      $(".modal-title").html("Processing")
+      $(".modal-body").html("Automatically parallelize your algorithm, please wait...")
+      $("#alert-seq-pass").addClass("hidden");
+      $("#alert-par-pass").addClass("hidden");
+      $('#grape-modal').modal();
+
+      $.post("/plugin-validate",
+        $("#appendix_form").serialize(),
+        function(data) {
+          console.log(data);
+          // $( ".result" ).html(data );
+          //console.log(data);
+          $('#grape-modal').modal("hide");
+          if (!data.startsWith("0")) {
+            // failed
+            $("#head-error").html("<strong>Errors exist in your sequential code</strong><br>" + data);
+            $("#head-error").removeClass("hidden");
+            $("#alert-seq-pass").addClass("hidden");
+            $("#alert-par-pass").addClass("hidden");
+            window.scrollTo(0, 0);
+          } else {
+            // success
+            $("#head-error").addClass("hidden");
+            $("#alert-seq-pass").removeClass("hidden");
+            $("#alert-par-pass").removeClass("hidden");
+            window.scrollTo(0, 0);
+            //submit_step_2(data.substring(1));
+          }
+          $("#alert-notice-pass").addClass("hidden");
+        });
+
+      function submit_step_2($seq_name) {
+        console.log("step2 = " + $seq_name)
+        $.post("http://localhost/plugin-par.php", {
+            filebase: $seq_name,
+            algoname: $algoname
+          },
+          function(data) {
+            console.log("second_submit" + data);
+            if (data.startsWith("0")) {
+              $("#alert-par-pass").removeClass("hidden");
+            } else {
+              $(".head-error").html("<pre><strong>Errors exist in your sequential code</strong><br>" + data + "</pre>");
+              $(".head-error").removeClass("hidden");
+              window.scrollTo(0, 0);
+            }
+          });
+      }
+    });
+  </script>
+</body>
+
+</html>
+<!--footerend

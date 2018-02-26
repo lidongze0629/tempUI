@@ -1,0 +1,646 @@
+<!--header-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>GRAPE Online</title>
+
+  <!-- Bootstrap -->
+  <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- NProgress -->
+  <link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
+  <!-- iCheck -->
+  <link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+  <!-- Custom Theme Style -->
+  <link href="/build/css/custom.css" rel="stylesheet">
+</head>
+
+<body class="nav-md">
+  <div class="container body">
+    <div class="main_container">
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="index.html" class="site_title"><span>GRAPE</span></a>
+          </div>
+          <div class="clearfix"></div>
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+              <ul class="nav side-menu">
+                <li><a href="grape-running?if_waiting=0"><i class="fa fa-home"></i> Processing</span></a></li>
+                <li><a href="grape-plug"><i class="fa fa-plug"></i> Plug</span></a></li>
+                <!-- <li><a href="grape-running-communication"><i class="fa fa-home"></i>Running-communication</a></li> -->
+                <li><a href="grape-cluster"><i class="fa fa-server"></i>Clusters</a></li>
+                <li><a href="grape-queries"><i class="fa fa-home"></i>Queries</a></li>
+                <li><a href="grape-instances"><i class="fa fa-home"></i>Jobs</a></li>
+                <!-- <li><a href="grape-single-query"><i class="fa fa-line-chart"></i>Performance</a></li> -->
+              </ul>
+            </div>
+
+          </div>
+          <!-- /sidebar menu -->
+        </div>
+      </div>
+      <!--headerend-->
+      <!-- page content -->
+      <div class="right_col" role="main">
+        <div class="page-title">
+          <div class="title_left">
+            <h3>Paralleling Sequential Algorithms
+                            <!-- <small>a detail page for single job</small> -->
+                        </h3>
+          </div>
+        </div>
+
+        <!-- running head -->
+        <div class="row x_panel tile y_running_nav">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="y_proc_block">
+              <div class="y_proc_block_center">
+                <!-- <div class="y_title">Processing</div> -->
+                <div class="y_proc_sec col-md-5 col-sm-5 col-xs-5">
+                  <div class="y_proc_bg">
+                    Plug
+                  </div>
+                </div>
+                <div class="y_proc_sec col-md-2 col-sm-2 col-xs-2">
+                  <div class="y_proc_bg">
+                    Play
+                  </div>
+                </div>
+                <div class="y_proc_sec col-md-5 col-sm-5 col-xs-5">
+                  <div class="y_proc_bg">
+                    Analytics
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+            <div class="y_proc_overlay">
+              <div class="y_proc_block_center y_proc_flow">
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                  <div class="y_flow_box y_flow_half active">
+                    <a href="#"><i class="fa fa-plug"></i>Plug Algorithm</a>
+                  </div>
+                  <div class="yarrows"></div>
+                  <div class="y_flow_box y_flow_half">
+                    <a href="#"><i class="fa fa-refresh"></i>Load Graph Data</a>
+                  </div>
+                  <div class="yarrows"></div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <div class="y_flow_box y_flow_cluster">
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+
+                  <div class="y_flow_box y_flow_half_r">
+                    <a href="JavaScript:void(0)" id="performance" style="color:grey"><i class="fa fa-line-chart"></i>Performance</a>
+                  </div>
+                  <div class="yarrows r"></div>
+
+                  <div class="y_flow_box y_flow_half_r">
+                    <a href="JavaScript:void(0)" id="result" style="color:grey"><i class="fa fa-list"></i>Result</a>
+                  </div>
+                  <div class="yarrows r"></div>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+
+        <div class="row y_running_expend">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <!-- TODO @jzxy, make the cluster static loading, without animation. -->
+                <h2>Processing </h2>
+                <ul class="nav navbar-right panel_toolbox">
+                  <li><a id="send_replay" href="JavaScript:void(0)">Replay</a></li>
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                  <li><a class="close-link"><i class="fa fa-close"></i></a>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content" style="overflow:auto;">
+                <style>
+                  .node {
+                    stroke-width: 1.5px;
+                    fill: black;
+                  }
+
+                  .link {
+                    fill: none;
+                    stroke-width: 1px;
+                  }
+                </style>
+                <!-- FIXME yangboming, now is 400, but should be 100%;. -->
+                <% var diameter =workerNum*100/3.1415 %>
+                  <svg id="svg_canvas" width="<%=diameter+250 %>" height="<%=diameter+200 %>"></svg>
+                  <script src="/js/d3.v4.js"></script>
+                  <script src="../vendors/jquery/dist/jquery.min.js"></script>
+                  <script>
+                    var node_index = 0
+                    var cpu = new Array()
+                    var usedMem = new Array()
+                    var totalMem = new Array()
+                    var tx = new Array()
+                    var rx = new Array()
+                    var ipMap = new Array()
+                    var totalDisk = new Array()
+                    var usedDisk = new Array()
+                    var label = new Array()
+                    var send_start_node = new Array()
+                    var send_end_node = new Array()
+                    var interval = 5000
+                    var link_color = new Array();
+                    for (var k = 0; k < 40; k++) {
+                      link_color[k] = new Array();
+                      for (var j = 0; j < 40; j++) {
+                        link_color[k][j] = 0;
+                      }
+                    }
+                    read_communication_data()
+
+                    //sleep functioin
+
+                    var workerNum = <%=workerNum %>;
+
+                    var svg = d3.select("svg"),
+                      // FIXME: then the width cannot by getting width of svn, since 100% not number, throws NaN(not a num)
+                      width = +svg.attr("width"),
+                      height = +svg.attr("height");
+
+                    var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+                    var simulation = d3.forceSimulation()
+                      .force("center", d3.forceCenter(<%= diameter/2+100 %>, <%= diameter/2 + 100%>));
+
+                    // @jzxy, notes how to load different worker file.
+                    // TODO @jzxy: replace /demo_data with the global configured value in server.js
+                    d3.json("/demo_data/<%=workerNum %>_workers.json", function(error, graph) {
+                      if (error) throw error;
+                      var time = 1000;
+                      var nodes = graph.nodes.map(function(d) {
+                          return {
+                            'x': d.x,
+                            'y': d.y,
+                            'fixed': true,
+                            'id': d.id
+                          }
+                        }),
+                        nodeById = d3.map(nodes, function(d) {
+                          return d.id;
+                        }),
+                        links = graph.links,
+                        bilinks = [];
+
+                      links.forEach(function(link) {
+                        var s = link.source = nodeById.get(link.source),
+                          t = link.target = nodeById.get(link.target),
+                          i = {}; // intermediate node
+                        nodes.push(i);
+                        links.push({
+                          source: s,
+                          target: i
+                        }, {
+                          source: i,
+                          target: t
+                        });
+                        bilinks.push([s, i, t]);
+                      });
+
+
+                      var link = svg.selectAll(".link")
+                        .data(bilinks)
+                        .enter().append("path")
+                        .attr("class", "link");
+
+                      svg.selectAll(".link")
+                        .attr("stroke", "#bbb");
+                      /*svg.selectAll(".link")
+											.attr("stroke",function(d,i){
+                                                if(send_inform[d[0].id][d[2].id]==1){
+                                                    return "#DC143C"
+                                                }else
+                                                    return "#bbb"
+                                            });*/
+
+
+                      var node = svg.selectAll(".node")
+                        .data(nodes.filter(function(d) {
+                          return d.id;
+                        }))
+                        .enter().append("g")
+                        .attr("class", "node")
+                        .attr("fixed", true);
+
+                      node.append("image")
+                        .attr("xlink:href", "/images/worker.png")
+                        .attr("x", -25)
+                        .attr("y", -25)
+                        .attr("height", 50)
+                        .attr("width", 50);
+
+                      node.append("text")
+                        .attr("dy", "-10")
+                        .attr("dx", "30")
+                        .attr("text-anchor", "start")
+                        .text(function(d) {
+                          var temp_id = d.id
+                          return "Worker_" + d.id
+                        });
+                      node.append("text")
+                        .attr("dy", "6")
+                        .attr("dx", "30")
+                        .attr("text-anchor", "start")
+                        .text(function(d) {
+                          var temp_cpu = cpu[d.id] * 100
+                          return "CPU" + temp_cpu + "%"
+                        });
+                      node.append("text")
+                        .attr("dy", "22")
+                        .attr("dx", "30")
+                        .attr("text-anchor", "start")
+                        .text(function(d) {
+                          var mem = (usedMem[d.id] / totalMem[d.id] * 100).toFixed(2)
+                          return "Mem " + mem + "%"
+                        });
+
+                      simulation
+                        .nodes(nodes)
+                        .on("tick", ticked);
+
+                      $(function() {
+                        var socket = io();
+                        socket.on('send message', function(msg1) {
+                          //$("p#console_log").append("<br />" + msg1)
+                          //TODO:check which kind of msg
+                          msg = msg1.match(/\d+/g);
+                          // $("p#console_log").append("<br />" + msg[0])
+                          // $("p#console_log").append("<br />" + msg[1])
+                          // $("p#console_log").append("<br />" + msg[2])
+                          svg.selectAll(".link")
+                            .attr("stroke", function(s, t, d, i) {
+                              if (((d[0].id == s) && (d[2].id == t)) || ((d[0].id == t) && (d[2].id == s))) {
+                                link_color[s][t] = link_color[s][t] + 0.3
+                                link_color[t][s] = link_color[t][s] + 0.3
+                                if (link_color[s][t] < 0) {
+                                  link_color[s][t] = 0;
+                                } else if (link_color[s][t] > 1) {
+                                  link_color[s][t] = 1;
+                                }
+                                if (link_color[t][s] < 0) {
+                                  link_color[t][s] = 0;
+                                } else if (link_color[t][s] > 1) {
+                                  link_color[t][s] = 1;
+                                }
+                                var temp = HSVtoHEX(link_color[t][s]);
+                                //$("p#console_log").append("<br />" + temp)
+                                return temp;
+                              } else return HSVtoHEX(link_color[d[0].id][d[2].id]);
+                            }.bind(this, msg[1], msg[2]));
+                          setTimeout(function(a, b) {
+                            svg.selectAll(".link")
+                              .attr("stroke", function(s, t, d, i) {
+                                if (((d[0].id == s) && (d[2].id == t)) || ((d[0].id == t) && (d[2].id == s))) {
+                                  link_color[s][t] = link_color[s][t] - 0.3
+                                  link_color[t][s] = link_color[t][s] - 0.3
+                                  if (link_color[s][t] < 0) {
+                                    link_color[s][t] = 0;
+                                  } else if (link_color[s][t] > 1) {
+                                    link_color[s][t] = 1;
+                                  }
+                                  if (link_color[t][s] < 0) {
+                                    link_color[t][s] = 0;
+                                  } else if (link_color[t][s] > 1) {
+                                    link_color[t][s] = 1;
+                                  }
+                                  return HSVtoHEX(link_color[s][t]);
+                                } else return HSVtoHEX(link_color[d[0].id][d[2].id]);
+                              }.bind(this, a, b));
+                          }.bind(this, msg[1], msg[2]), interval);
+                        })
+
+                      })
+
+                      setInterval(function() {
+
+                        read_communication_data()
+                        var node_count = svg.selectAll('path').nodes().length
+
+                        node.selectAll("text").remove()
+                        node.append("text")
+                          .attr("dy", "-10")
+                          .attr("dx", "30")
+                          .attr("text-anchor", "start")
+                          .text(function(d) {
+                            var temp_id = d.id
+                            return "Worker_" + d.id
+                          });
+                        node.append("text")
+                          .attr("dy", "6")
+                          .attr("dx", "30")
+                          .attr("text-anchor", "start")
+                          .text(function(d) {
+                            var temp_cpu = cpu[d.id] * 100
+                            return "CPU" + temp_cpu + "%"
+                          });
+                        node.append("text")
+                          .attr("dy", "22")
+                          .attr("dx", "30")
+                          .attr("text-anchor", "start")
+                          .text(function(d) {
+                            var mem = (usedMem[d.id] / totalMem[d.id] * 100).toFixed(2)
+                            return "Mem " + mem + "%"
+                          });
+                      }, time);
+
+                      function ticked() {
+                        link.attr("d", positionLink);
+                        node.attr("transform", positionNode);
+                      }
+                    });
+
+
+                    /////////////////////////////////////////////////////////////////////////
+
+                    function positionLink(d) {
+                      return "M" + d[0].x + "," + d[0].y + " " + d[2].x + "," + d[2].y;
+                    }
+
+                    function positionNode(d) {
+                      return "translate(" + d.x + "," + d.y + ")";
+                    }
+
+                    function transition(node_index = 0) {
+
+                    }
+
+                    function HSVtoHEX(s) {
+                      if (s < 0) {
+                        s = 0;
+                      } else if (s > 1) {
+                        s = 1;
+                      }
+                      var r, g, b, i, f, p, q, t;
+                      v = 0.7333
+                      h = 0.4679
+                      i = Math.floor(h * 6);
+                      f = h * 6 - i;
+                      p = v * (1 - s);
+                      q = v * (1 - f * s);
+                      t = v * (1 - (1 - f) * s);
+                      switch (i % 6) {
+                        case 0:
+                          r = v, g = t, b = p;
+                          break;
+                        case 1:
+                          r = q, g = v, b = p;
+                          break;
+                        case 2:
+                          r = p, g = v, b = t;
+                          break;
+                        case 3:
+                          r = p, g = q, b = v;
+                          break;
+                        case 4:
+                          r = t, g = p, b = v;
+                          break;
+                        case 5:
+                          r = v, g = p, b = q;
+                          break;
+                      }
+                      r = Math.round(r * 255)
+                      g = Math.round(g * 255)
+                      b = Math.round(b * 255)
+                      var hex = "#"
+                      hex += ("0" + Number(r).toString(16)).slice(-2);
+                      hex += ("0" + Number(g).toString(16)).slice(-2);
+                      hex += ("0" + Number(b).toString(16)).slice(-2);
+                      return hex;
+                    }
+
+                    function read_communication_data() {
+                      $.get("grape_stat_monitor.record", function(data) {
+                        var str = data
+                        var tempArray = str.split("\n")
+                        var machineNum = 0
+                        var read_times = 0
+                        for (var i = 0; i < tempArray.length; i++) {
+                          var j = i % 8
+                          if (j == 0) {
+                            cpu[read_times] = tempArray[i]
+                          }
+                          if (j == 1) {
+                            usedMem[read_times] = tempArray[i]
+                          }
+                          if (j == 2) {
+                            totalMem[read_times] = tempArray[i]
+                          }
+                          if (j == 3) {
+                            tx[read_times] = tempArray[i]
+                          }
+                          if (j == 4) {
+                            rx[read_times] = tempArray[i]
+                          }
+                          if (j == 5) {
+                            ipMap[read_times] = tempArray[i]
+                          }
+                          if (j == 6) {
+                            totalDisk[read_times] = tempArray[i]
+                          }
+                          if (j == 7) {
+                            usedDisk[read_times] = tempArray[i]
+                            read_times++
+                          }
+                        } //for
+                        if (cpu[cpu.length - 1] == '') {
+                          cpu.length--
+                            if (cpu.length == usedMem.length) {
+                              machineNum = cpu.length
+                            }
+                        }
+                      })
+                    }
+
+                    // Returns an attrTween for translating along the specified path element.
+                    function translateAlong(path) {
+                      var l = path.getTotalLength();
+                      return function(d, i, a) {
+                        return function(t) {
+                          var p = path.getPointAtLength(t * l);
+                          return "translate(" + p.x + "," + p.y + ")";
+                        };
+                      };
+                    }
+                  </script>
+              </div>
+            </div>
+          </div>
+          <!-- /running head -->
+          <!-- </div> -->
+
+
+
+          <div class="col-md-6 col-sm-6 col-xs-12" id="scroll" style="height:487px; overflow:auto">
+            <div class="x_panel y_console">
+              <div class="x_title">
+                <h2>Cluster Console<small></small></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                  <li><a class="close-link"><i class="fa fa-close"></i></a>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+
+              <div class="x_content running-log">
+                <p id="console_log">loading log file .....</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /page content -->
+      <!--footer-->
+      <!-- footer content -->
+      <footer>
+        <div class="pull-right">
+          Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+        </div>
+        <div class="clearfix"></div>
+      </footer>
+      <!-- /footer content -->
+    </div>
+  </div>
+  <!-- jQuery -->
+  <script src="../vendors/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- FastClick -->
+  <script src="../vendors/fastclick/lib/fastclick.js"></script>
+  <!-- NProgress -->
+  <script src="../vendors/nprogress/nprogress.js"></script>
+  <!-- Chart.js -->
+  <script src="../vendors/Chart.js/dist/Chart.min.js"></script>
+  <!-- gauge.js -->
+  <script src="../vendors/gauge.js/dist/gauge.min.js"></script>
+  <!-- bootstrap-progressbar -->
+  <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+  <!-- iCheck -->
+  <script src="../vendors/iCheck/icheck.min.js"></script>
+  <!-- Skycons -->
+  <script src="../vendors/skycons/skycons.js"></script>
+  <!-- Flot -->
+  <script src="../vendors/Flot/jquery.flot.js"></script>
+  <script src="../vendors/Flot/jquery.flot.pie.js"></script>
+  <script src="../vendors/Flot/jquery.flot.time.js"></script>
+  <script src="../vendors/Flot/jquery.flot.stack.js"></script>
+  <script src="../vendors/Flot/jquery.flot.resize.js"></script>
+  <!-- Flot plugins -->
+  <script src="../vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+  <script src="../vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+  <script src="../vendors/flot.curvedlines/curvedLines.js"></script>
+  <!-- DateJS -->
+  <script src="../vendors/DateJS/build/date.js"></script>
+  <!-- JQVMap -->
+  <script src="../vendors/jqvmap/dist/jquery.vmap.js"></script>
+  <script src="../vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+  <script src="../vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+  <!-- bootstrap-daterangepicker -->
+  <script src="../vendors/moment/min/moment.min.js"></script>
+  <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+  <!-- Custom Theme Scripts -->
+  <script src="../build/js/custom.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/vendors/jqvmap/dist/bootbox.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      var socket = io();
+      var logJson = <%-logJson%>;
+      //var str = logJson.split(",");
+      for (var i = 0; i < logJson.length; i++) {
+        $("p#console_log").append("<br />" + logJson[i]);
+      }
+
+      socket.on('chat message', function(msg) {
+        //alert(msg)
+        $("p#console_log").append("<br />" + msg)
+        var str = msg
+        if (str.indexOf("shutdown") != -1) {
+          $("#performance").attr("href", "/grape-single-query?sessionID=<%=sessionID%>")
+          document.getElementById("performance").style.color = "#104E8B";
+          $("#result").attr("href", "/grape-result?sessionID=<%=sessionID%>&algo=<%=algo%>")
+          document.getElementById("result").style.color = "#104E8B";
+          document.getElementById("send_replay").href = "grape-communication-replay?sessionID=<%=sessionID%>&workerNum=<%=workerNum%>&algo=<%=algo%>"
+
+          var div = document.getElementById('scroll');
+          div.scrollTop = div.scrollHeight;
+
+          var dialog = bootbox.dialog({
+            title: 'Graph Computing is Over!',
+            message: "<p>See Result&Performance Page or Replay</p>",
+            buttons: {
+              cancel: {
+                label: "Result",
+                className: 'result',
+                callback: function() {
+                  window.location.href = "grape-result?sessionID=<%=sessionID%>&algo=<%=algo%>"
+                }
+              },
+              noclose: {
+                label: "Performance",
+                className: 'performance',
+                callback: function() {
+                  window.location.href = "grape-single-query?sessionID=<%=sessionID%>"
+                }
+              },
+              ok: {
+                label: "Replay",
+                className: 'replay',
+                callback: function() {
+                  window.location.href = "grape-communication-replay?sessionID=<%=sessionID%>&workerNum=<%=workerNum%>&algo=<%=algo%>"
+                }
+              }
+            }
+          });
+        }
+      });
+
+      /*socket.on('send message', function(msg) {
+          //alert(msg)
+          $("p#console_log").append("<br />" + msg)
+      })*/
+
+      $(document).ready(function() {
+        var if_shutdown = $("p#console_log").text()
+        if ((if_shutdown.lastIndexOf('shutdown')) != -1) {
+          $("#performance").attr("href", "/grape-single-query?sessionID=<%=sessionID%>")
+          document.getElementById("performance").style.color = "#104E8B";
+          $("#result").attr("href", "/grape-result?sessionID=<%=sessionID%>&algo=<%=algo%>")
+          document.getElementById("result").style.color = "#104E8B";
+          document.getElementById("send_replay").href = "grape-communication-replay?sessionID=<%=sessionID%>&workerNum=<%=workerNum%>&algo=<%=algo%>"
+        }
+      })
+    });
+  </script>
+</body>
+
+</html>
+<!--footerend

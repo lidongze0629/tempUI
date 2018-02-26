@@ -1,0 +1,32 @@
+Log file created at: 2018/02/09 21:30:59
+Running on machine: ldz
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0209 21:30:59.318970 19182 grape.cc:17] Welcome to GRAPE!
+I0209 21:30:59.329879 19182 io_factory.h:38] Use default file location(local) to open: ./grape-test/twitter.r
+I0209 21:30:59.356089 19182 io_factory.h:38] Use default file location(local) to open: ./grape-test/twitter.e
+I0209 21:31:00.262673 19182 io_factory.h:38] Use default file location(local) to open: ./grape-test/twitter.v
+I0209 21:31:00.339843 19182 sync_worker.cc:437] [worker0] finished loading graphs...
+I0209 21:31:00.752151 19182 sssp.h:38] Create a instance of SSSP.
+I0209 21:31:00.752681 19182 bfs.h:38] Create a instance of BFS.
+I0209 21:31:00.753232 19182 pagerank.h:38] Create a instace of Pagerank.
+I0209 21:31:00.755434 19182 sync_worker.cc:44] 1 - > 0
+I0209 21:31:00.755925 19197 sssp.cc:51] query source = 4
+I0209 21:31:00.863217 19235 sssp.cc:205] [frag0] partial result output: ./sssp_4_frag_0_20180209_093100
+I0209 21:31:00.866250 19182 sync_worker.cc:44] 1 - > 0
+I0209 21:31:00.866794 19242 sssp.cc:51] query source = 4
+I0209 21:31:00.974967 19280 sssp.cc:205] [frag0] partial result output: ./sssp_4_frag_0_20180209_093100
+I0209 21:31:00.989866 19182 sync_worker.cc:44] 1 - > 0
+I0209 21:31:00.989987 19285 bfs.cc:36] source = 1, bound = 4
+I0209 21:31:01.081900 19306 bfs.cc:169] [frag0] partial result output: ./bfs_1-4_frag_0_20180209_093101
+I0209 21:31:01.087594 19182 sync_worker.cc:44] 1 - > 0
+I0209 21:31:01.089094 19311 bfs.cc:36] source = 1, bound = 3
+I0209 21:31:01.124891 19325 bfs.cc:169] [frag0] partial result output: ./bfs_1-3_frag_0_20180209_093101
+I0209 21:31:01.136930 19182 sync_worker.cc:44] 1 - > 0
+I0209 21:31:01.324061 19372 pagerank.cc:182] [frag0] partial result output: ./pagerank_frag_0_20180209_093101
+I0209 21:31:01.330047 19182 io_factory.h:38] Use default file location(local) to open: ./grape-test/p2p-31.r4
+I0209 21:31:01.354229 19182 io_factory.h:38] Use default file location(local) to open: ./grape-test/p2p-31.e
+I0209 21:31:01.495163 19182 io_factory.h:38] Use default file location(local) to open: ./grape-test/p2p-31.v
+I0209 21:31:01.539269 19182 sync_worker.cc:437] [worker0] finished loading graphs...
+I0209 21:31:01.540182 19182 wcc.h:38] Create a instace of WCC.
+I0209 21:31:01.540204 19182 sync_worker.cc:44] 1 - > 0
+I0209 21:31:01.563547 19397 wcc.cc:235] [frag0] partial result output: ./wcc_frag_0_20180209_093101
